@@ -1,68 +1,70 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# _Biohack BaseLine_
 
-## Available Scripts
+#### _Test your Brain! {12/6/2019}_
 
-In the project directory, you can run:
+#### By _**Devin Cooley**_
 
-### `npm start`
+## Description
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+_The purpose of this application is to allow a user to define a baseline brain function level, then test their brain performance under different variable conditions. Users will be able to browse and compare all of their different tests or test groups._
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## Specifications
+![project map](./src/img/TapRoomDiagramV3.jpg "TapRoom Map")
 
-### `npm test`
+* #### Authentication
+| Spec                      |Input          | Output |
+|:---------------------------|:-------------|:------|
+|Users will be prompted to register or Login|`navigates to page`|Register or Login|
+|User can register|`Register`|Please enter a new user name, email, and password|
+|User can log in|`Log In`|Please enter a new user name and password|
+|Logged in users will be allowed to view their content|`Log in Successful`| _Navigates to user dashboard.|
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* #### Brain Performance testing
+| Spec                      |Input          | Output |
+|:---------------------------|:-------------|:------|
+|User can initiate a new test|`New Test`|_Begins New Test script._|
+|Modal should appear explaining the scientific process|_New test begins._|_Explanation modal appears._|
+|User can input all data about control and test variables into a form|`Enters info`|_Test Scenario Saved_|
+|Modal should appear explaining how the reaction time test will work|`Enters info`|_Modal appears._|
+|User can click a start button to begin reaction time test|`Start`|_Reaction test begins._|
+|Application displays instruction about which button to click and a series of buttons to choose from|_Reaction test begins_|_Instruction and buttons appear on screen_|
+|Reaction time test should repeat 10 times|_Completes previous test._|_Next test begins._|
+|Modal about memory testing should appear|_Finishes final reaction time test._|_Modal about memory testing appears._|
+|User can click a start button to begin memory testing|
+|Memory test should repeat 10 times.|_Completes previous test._|_Next test begins._|
+|Upon completing final memory test, testing results are displayed|`Finish testing`|_Test data displayed for all 20 rounds of testing._|
+|User can opt to save that test or discard it|`Save` or `Discard`|_Test is either saved or discarded._|
 
-### `npm run build`
+* #### Test Data
+| Spec                      |Input          | Output |
+|:---------------------------|:-------------|:------|
+|Data page should show the user a list of all their previously taken tests|`Navigates to Data page.`|_List of all previously taken tests generates._|
+|User can sort through test by their variable condition.|`Sort by variable`|_Displays all tests related to that variable._|
+|User can set a certain test as their baseline 'Control' condition.|`Set this test as baseline.`|_Selected test in now the baseline test._|
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* #### Statistics
+| Spec                      |Input          | Output |
+|:---------------------------|:-------------|:------|
+|User can select a test or group of tests to compare to their baseline test.|`Selects test or group of tests.`|_Statistical comparison data is calculated and displayed._|
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+## Setup/Installation Requirements
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Known Bugs
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+_There are no known bugs at this time._
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Support and contact details
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+_Send any questions or comments to Devin Cooley at devincooley.dev@gmail.com._
 
-## Learn More
+## Technologies Used
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+_This application was written using JavaScript, HTML, and CSS. Packages manager with Node Package Manager. The front end of this application was written with React. Authorization and databasing was accomplished using FireBase._
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### License
 
-### Code Splitting
+*This software is licensed under the MIT license.*
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Copyright (c) 2019 **_Devin Cooley**
