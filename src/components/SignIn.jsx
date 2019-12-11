@@ -25,11 +25,15 @@ class SignIn extends React.Component {
     console.log(this.state);
   }
   render() {
+    const buttonStyle={
+      marginBottom: '10px'
+  }
     return (
       <Container maxWidth='md'>
         <Paper>
           <Container maxWidth='lg'>
             <form onSubmit={this.onSignIn}>
+            <h5>Sign In:</h5>
               <div className="input-field">
                 <label htmlFor="email">Email:</label>
                 <TextField placeholder='name@email.com' margin="normal" fullWidth type="email" id="email" InputLabelProps={{ shrink: true, }} onChange={this.onInputFieldChange} />
@@ -37,7 +41,9 @@ class SignIn extends React.Component {
                 <TextField placeholder='*********' fullWidth type="password" id="password" InputLabelProps={{ shrink: true }} onChange={this.onInputFieldChange} />
               </div>
               <div className="input-field">
-                <Button type='submit' className='btn btn-large'>Sign In</Button>
+                <br/>
+                <Button style={buttonStyle} type='submit' color='primary' variant='outlined' className='btn btn-large'>Sign In</Button>
+                <br/>
               </div>
             </form>
           </Container>

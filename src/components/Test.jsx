@@ -3,7 +3,7 @@ import SideBar from './SideBar'
 import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
 import { getThemeProps } from '@material-ui/styles';
-
+import NewTestForm from './NewTestForm';
 const testStyles = makeStyles(theme => ({
   root: {
     height: '100vh',
@@ -22,6 +22,7 @@ const Test = (props) => {
           <SideBar currentRouterPath={props.currentRouterPath}/>
         </Grid>
         <Grid item xs={10} className={classes.root}>
+          <NewTestForm/>
         </Grid>
       </Grid>
     </div>

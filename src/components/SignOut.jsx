@@ -18,7 +18,8 @@ class SignOut extends React.Component {
                         <h5>Are you sure you would like to sign out?</h5>
                     </div>
                     <div className="input-field">
-                        <Button type='submit' className='btn btn-large'>Sign Out</Button>
+                    <br/>
+                        <Button type='submit' variant='outlined' color='secondary'className='btn btn-large'>Sign Out</Button>
                     </div>
                 </form>
             </div>

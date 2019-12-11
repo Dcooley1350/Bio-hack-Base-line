@@ -31,14 +31,9 @@ class RegisterUser extends React.Component {
 
 
     render() {
-        const registerUserStyles = ({
-            root: {
-                '& > *': {
-                    paddingLeft: '10%'
-
-                },
-            }
-        });
+        const buttonStyle={
+            marginBottom: '10px'
+        }
         return (
             <Container maxWidth='md'>
                 <Paper>
@@ -59,8 +54,11 @@ class RegisterUser extends React.Component {
                             <TextField placeholder='name@email.com' margin="normal" fullWidth type="email" id="email" InputLabelProps={{ shrink: true, }} onChange={this.onInputFieldChange} />
                             <label htmlFor="Password">Password</label>
                             <TextField placeholder='*********' fullWidth type="password" id="password" InputLabelProps={{ shrink: true }} onChange={this.onInputFieldChange} />
-                            <br/>
-                            <Button type='submit' className='btn btn-large'>Register</Button>
+                            <div>
+                                <br/>
+                                <Button style={buttonStyle} type='submit' color='primary' variant='outlined' className='btn btn-large'>Register</Button>
+                                <br/>
+                            </div>
                         </form>
                     </Container>
                 </Paper>
