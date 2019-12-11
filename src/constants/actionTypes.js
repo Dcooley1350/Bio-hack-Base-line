@@ -1,0 +1,5 @@
+//USER REDUCER CONSTANTS
+export const NEW_USER = 'NEW_USER';
+
+//TEST REDUCER CONSTANTS
+export const NEW_TEST = 'NEW_TEST';
