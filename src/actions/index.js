@@ -10,6 +10,7 @@ export function newUser(_firstName, _lastName, _email, _password) {
     return () => tickets.push({
         firstName: _firstName,
         lastName: _lastName,
-        email: 
+        email: _email,
+        password: _password,
     })
 }
