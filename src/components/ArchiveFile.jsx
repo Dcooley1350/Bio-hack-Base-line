@@ -9,7 +9,6 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 const archiveFileStyles = makeStyles(theme => ({
     root: {
         width: '100%',
-        height: '100vh'
     },
     heading: {
         fontsize: '12px',
@@ -35,14 +34,11 @@ const ArchiveFile = (props) => {
             <ExpansionPanel expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
                 <ExpansionPanelSummary
                     expandIcon={<ExpandMoreIcon />} aria-controls="panel1bh-content" id="panel1bh-header">
-                    <Typography className={classes.heading}>General settings</Typography>
+                    <Typography className={classes.heading}>{props.id}  {props.testVar}</Typography>
                     <Typography className={classes.secondaryHeading}>I am an expansion panel</Typography>
                 </ExpansionPanelSummary>
                 <ExpansionPanelDetails>
-                    <Typography>
-                        Nulla facilisi. Phasellus sollicitudin nulla et quam mattis feugiat. Aliquam eget
-                        maximus est, id dignissim quam.
-            </Typography>
+                    <Typography>{props.description}</Typography>
                 </ExpansionPanelDetails>
             </ExpansionPanel>
         </div>
