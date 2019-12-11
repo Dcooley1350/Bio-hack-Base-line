@@ -5,7 +5,7 @@ import Application from './components/Application';
 import  { Provider } from 'react-redux';
 import rootReducer from './reducers/index';
 import { createStore, applyMiddleware } from 'redux';
-import  { thunkMiddleware } from 'redux-thunk';
+import thunkMiddleware  from 'redux-thunk';
 
 const store = createStore(rootReducer, applyMiddleware(thunkMiddleware));
 
