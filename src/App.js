@@ -2,7 +2,7 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Application from './components/Application';
-import Provider from 'react-redux';
+import  { Provider } from 'react-redux';
 import rootReducer from './reducers/index';
 import { createStore } from 'redux';
 
