@@ -59,6 +59,7 @@ class RegisterUser extends React.Component {
                             <TextField placeholder='name@email.com' margin="normal" fullWidth type="email" id="email" InputLabelProps={{ shrink: true, }} onChange={this.onInputFieldChange} />
                             <label htmlFor="Password">Password</label>
                             <TextField placeholder='*********' fullWidth type="password" id="password" InputLabelProps={{ shrink: true }} onChange={this.onInputFieldChange} />
+                            <br/>
                             <Button type='submit' className='btn btn-large'>Register</Button>
                         </form>
                     </Container>

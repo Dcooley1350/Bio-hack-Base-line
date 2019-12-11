@@ -21,10 +21,10 @@ const Application = (props) => {
                     <Route path='/SignIn' component={SignIn}/>
                     <Route path='/SignOut' component={SignOut}/>
                     <Route path='/Register' component={Register}/>
-                    <Route path='/DashBoard' component={DashBoard}/>
-                    <Route path='/Archive' component={Archive}/>
-                    <Route path='/Analysis' component={Analysis}/>
-                    <Route path='/Test' component = {Test}/>
+                    <Route path='/DashBoard' render={()=> <DashBoard currentRouterPath='/DashBoard'/>}/>
+                    <Route path='/Archive' render={()=><Archive currentRouterPath='/Archive'/>}/>
+                    <Route path='/Analysis' render={()=><Analysis currentRouterPath='/Analysis'/>}/>
+                    <Route path='/Test' render={()=><Test currentRouterPath='/Test'/>}/>
                     <Route path='/Error404' component={Error404}/>
                 <Footer/>
             </Router>

@@ -5,7 +5,7 @@ const SideNav = (props) => {
   let details = null;
   let newKegButton = null;
   const sideNavStyle= {
-    height: '100%',
+    height: '100vh',
     backgroundColor: '#ececeb',
     width: '100%'
   };
@@ -23,11 +23,14 @@ const SideNav = (props) => {
   else if(props.currentRouterPath === '/Analysis'){
       greeting = <p>Welcome to Analysis</p>
   }
+  else if(props.currentRouterPath === '/DashBoard'){
+      greeting = <p>Welcome to DashBoard</p>
+  }
   return ( 
     <div style={sideNavStyle}>
-      {greeting}<br/>
-      {details}<br/>
-      <div>{newKegButton}</div>
+    <br/>
+      {greeting}
+  
     </div>
   );
 };
