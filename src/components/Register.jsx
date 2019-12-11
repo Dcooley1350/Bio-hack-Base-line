@@ -40,7 +40,7 @@ class RegisterUser extends React.Component {
                     <Container maxWidth='lg'>
                         <form onSubmit={this.onNewUserSubmit}>
                             <h5>Register</h5>
-                            <Grid container spacing="3">
+                            <Grid container spacing={0}>
                                 <Grid item xs={6}>
                                     <label htmlFor="firstName">First Name:</label>
                                     <TextField placeholder='first' margin="normal" fullWidth type="firstName" id="firstName" InputLabelProps={{ shrink: true, }} onChange={this.onInputFieldChange} />
