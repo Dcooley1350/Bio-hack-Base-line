@@ -14,16 +14,18 @@ class RegisterUser extends React.Component {
             email: '',
             password: '',
         }
+        this.onInputFieldChange= this.onInputFieldChange.bind(this);
+        this.onNewUserSubmit= this.onNewUserSubmit.bind(this);
+    }
+    onInputFieldChange(event) {
+        this.setState({
+            [event.target.id]: event.target.value
+        });
     }
     onNewUserSubmit(event) {
         event.preventDefault();
         console.log(this.state);
 
-    }
-    onInputFieldChange(event) {
-        this.setState({
-            [event.target.id]: event.target.id
-        });
     }
 
 
@@ -46,17 +48,17 @@ class RegisterUser extends React.Component {
                             <Grid container spacing="3">
                                 <Grid item xs={6}>
                                     <label htmlFor="firstName">First Name:</label>
-                                    <TextField placeholder='first' margin="normal" fullWidth type="firstName" id="firstName" InputLabelProps={{ shrink: true, }} onChange={this.handleInputFieldChange} />
+                                    <TextField placeholder='first' margin="normal" fullWidth type="firstName" id="firstName" InputLabelProps={{ shrink: true, }} onChange={this.onInputFieldChange} />
                                 </Grid>
                                 <Grid item xs={6}>
                                     <label htmlFor="lastName">Last Name:</label>
-                                    <TextField placeholder='last' margin="normal" fullWidth type="lastName" id="lastName" InputLabelProps={{ shrink: true, }} onChange={this.handleInputFieldChange} />
+                                    <TextField placeholder='last' margin="normal" fullWidth type="lastName" id="lastName" InputLabelProps={{ shrink: true, }} onChange={this.onInputFieldChange} />
                                 </Grid>
                             </Grid>
                             <label htmlFor="email">Email:</label>
-                            <TextField placeholder='name@email.com' margin="normal" fullWidth type="email" id="email" InputLabelProps={{ shrink: true, }} onChange={this.handleInputFieldChange} />
+                            <TextField placeholder='name@email.com' margin="normal" fullWidth type="email" id="email" InputLabelProps={{ shrink: true, }} onChange={this.onInputFieldChange} />
                             <label htmlFor="Password">Password</label>
-                            <TextField placeholder='*********' fullWidth type="password" id="password" InputLabelProps={{ shrink: true }} onChange={this.handleInputFieldChange} />
+                            <TextField placeholder='*********' fullWidth type="password" id="password" InputLabelProps={{ shrink: true }} onChange={this.onInputFieldChange} />
                             <Button type='submit' className='btn btn-large'>Register</Button>
                         </form>
                     </Container>
