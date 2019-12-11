@@ -9,6 +9,7 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 const archiveFileStyles = makeStyles(theme => ({
     root: {
         width: '100%',
+        height: '100vh'
     },
     heading: {
         fontsize: '12px',

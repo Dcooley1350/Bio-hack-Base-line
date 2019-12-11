@@ -5,23 +5,24 @@ import { makeStyles } from '@material-ui/core/styles';
 import ArchiveFileController from './ArchiveFileController';
 
 const DashboardStyles = makeStyles(theme => ({
-    root: {     
-        height: '100%',
+    root: {
+        height: '100vh',
         width: '100%'
     }
 }));
 
 const DashBoard = () => {
     const classes = DashboardStyles()
-    return(
-        
-        <Grid container spacing='0' className={classes.root}>
-            <Grid item xs={2} classname={classes.root}>
-                <SideBar />
+    return (
+        <div className={classes.root}>
+            <Grid container spacing='0' className={classes.root}>
+                <Grid item xs={2} classname={classes.root}>
+                    <SideBar />
+                </Grid>
+                <Grid item xs={10} classname={classes.root}>
+                </Grid>
             </Grid>
-            <Grid item xs={10} classname={classes.root}>
-            </Grid>
-        </Grid>
+        </div>
     );
 }
 
