@@ -6,7 +6,7 @@ import { makeStyles } from '@material-ui/core/styles'
 
 const ArchiveStyles = makeStyles(theme => ({
     root: {
-        height: '100%',
+        height: '100vh',
         width: '100%'
     }
 }));
@@ -14,14 +14,14 @@ const ArchiveStyles = makeStyles(theme => ({
 const Archive = () => {
     const classes= ArchiveStyles()
     return (
-        <Grid container spacing='0' className={classes.root}>
-            <Grid item xs={2} classname={classes.root}>
-                <SideBar/>
+            <Grid container spacing='0' className={classes.root}>
+                <Grid item xs={2} classname={classes.root}>
+                    <SideBar/>
+                </Grid>
+                <Grid item xs={10} classname={classes.root}>
+                    <ArchiveFileController/>
+                </Grid>
             </Grid>
-            <Grid item xs={10} classname={classes.root}>
-                <ArchiveFileController/>
-            </Grid>
-        </Grid>
     );
 }
 
