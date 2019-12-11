@@ -7,7 +7,7 @@ import SignOut from './SignOut';
 import Register from './Register';
 import DashBoard from './DashBoard';
 import Archive from './Archive';
-import Statistics from './Statistics';
+import Analysis from './Analysis';
 import Test from './Test';
 import Error404 from './Error404';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
@@ -23,7 +23,7 @@ const Application = (props) => {
                     <Route path='/Register' component={Register}/>
                     <Route path='/DashBoard' component={DashBoard}/>
                     <Route path='/Archive' component={Archive}/>
-                    <Route path='/Statistics' component={Statistics}/>
+                    <Route path='/Analysis' component={Analysis}/>
                     <Route path='/Test' component = {Test}/>
                     <Route path='/Error404' component={Error404}/>
                 <Footer/>

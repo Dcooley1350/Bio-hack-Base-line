@@ -9,7 +9,7 @@
 _The purpose of this application is to allow a user to define a baseline brain function level, then test their brain performance under different variable conditions. Users will be able to browse and compare all of their different tests or test groups._
 
 ## Specifications
-![project map](./src/img/TapRoomDiagramV3.jpg "TapRoom Map")
+
 
 * #### Authentication
 | Spec                      |Input          | Output |
