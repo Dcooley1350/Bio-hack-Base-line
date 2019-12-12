@@ -61,10 +61,10 @@ class NewTestForm extends React.Component {
                             </Grid>
                             <Grid container>
                                 <Grid item xs={6}>
-                                    <label htmlFor='ctrlCondition'>ControlConditions:</label>
-                                    <TextField type='text' id='ctrlCondition' fullWidth InputLabelProps={{ shrink: true }} onChange={this.onInputFieldChange}/>
-                                    <label htmlFor='ctrlCondition'>Control Conditions Notes:</label>
-                                    <TextField type='text' id='ctrlConditionNotes' fullWidth InputLabelProps={{ shrink: true }} onChange={this.onInputFieldChange}/>
+                                    <label htmlFor='ctrlConditions'>ControlConditions:</label>
+                                    <TextField type='text' id='ctrlConditions' fullWidth InputLabelProps={{ shrink: true }} onChange={this.onInputFieldChange}/>
+                                    <label htmlFor='ctrlConditionsNotes'>Control Conditions Notes:</label>
+                                    <TextField type='text' id='ctrlConditionsNotes' fullWidth InputLabelProps={{ shrink: true }} onChange={this.onInputFieldChange}/>
                                 </Grid>
                                 <Grid item xs={6}>
 

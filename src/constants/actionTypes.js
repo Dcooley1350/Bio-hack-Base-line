@@ -3,3 +3,6 @@ export const NEW_USER = 'NEW_USER';
 
 //TEST REDUCER CONSTANTS
 export const NEW_TEST = 'NEW_TEST';
+
+//Current Test REDUCER CONSTANTS
+export const NEW_CURRENT_TEST = 'NEW_CURRENT_TEST'

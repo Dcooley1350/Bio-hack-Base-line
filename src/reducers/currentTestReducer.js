@@ -4,7 +4,7 @@ const currentTestReducer = (state = {}, action) => {
     let newState;
     switch(action.type){
         case c.NEW_CURRENT_TEST:
-            newState= Object.assign({}, state, action.currentTest)
+            newState= Object.assign({}, state, action.currentTest);
             return newState;
 
             default:
