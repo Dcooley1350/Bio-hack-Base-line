@@ -4,10 +4,12 @@ import Container from '@material-ui/core/Container';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
-import DateTime from '@material-ui/core/'
+import DateTime from '@material-ui/core/';
+import { connect } from 'react-redux';
+import { newCurrentTest } from './../actions/index'
 
 
-class NewTestForm extends React.Component {
+class newTestForm extends React.Component {
     constructor(props){
         super(props);
         let state = {
@@ -29,7 +31,18 @@ class NewTestForm extends React.Component {
     }
     onNewTestSubmit(event) {
         event.preventDefault();
+        const test = {
+            date: this.state.date,
+            time: this.state.time,
+            expCondition: this.state.expCondition,
+            expConditionNotes: this.state.expConditionNotes,
+            ctrlCondition: this.state.ctrlCondition,
+            ctrlCondition: this.state.ctrlConditionNotes
+        }
+        console.log(test);
         console.log(this.state);
+        this.props.dispatch(newCurrentTest(test))
+
     };
     render() {
         const buttonStyle={
@@ -82,5 +95,10 @@ class NewTestForm extends React.Component {
         );
     };
 };
+const mapStateToProps = state => {
+    return{
+        currentTest: state.currentTest
+    }
+}
 
-export default NewTestForm;
+export default connect(mapStateToProps)(newTestForm);

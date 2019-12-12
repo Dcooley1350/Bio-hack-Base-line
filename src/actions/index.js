@@ -1,7 +1,7 @@
 import constants from './../constants';
-const { types } = constants;
-
 import firebase from 'firebase';
+
+const { types } = constants;
 const { firebaseConfig } = constants;
 
 firebase.initializeApp(firebaseConfig);
@@ -18,7 +18,7 @@ export function sendNewUserToFireBase(_firstName, _lastName, _email, _password) 
     })
 }
 
-export function sendTestToFireBase(_expCondition, _expConditionNotes, _Time, _Date, _ctrlConditions, _ControlConditionNotes){
+export function sendTestToFireBase(_expCondition, _expConditionNotes, _Time, _Date, _ctrlConditions, _ctrlConditionsNotes){
     return () => tests.push({
         expCondition: _expCondition,
         expConditionNotes: _expConditionNotes,
