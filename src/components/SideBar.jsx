@@ -38,7 +38,8 @@ const SideNav = (props) => {
 const mapStateToProps = (state) => ({
   currentUser: state.currentUser,
   testsById: state.testsById,
-  currentTest: state.currentTest
+  currentTest: state.currentTest,
+  testScriptPosition: state.testScriptPosition
 });
  
 export default connect(mapStateToProps)(SideNav);

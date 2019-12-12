@@ -4,6 +4,8 @@ import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
 import { getThemeProps } from '@material-ui/styles';
 import NewTestForm from './NewTestForm';
+import { connect } from 'react-redux';
+
 const testStyles = makeStyles(theme => ({
   root: {
     height: '100vh',
@@ -12,8 +14,9 @@ const testStyles = makeStyles(theme => ({
 }));
 
 const Test = (props) => {
-
   const classes = testStyles()
+
+
 
   return (
     <div className={classes.root}>
@@ -29,4 +32,10 @@ const Test = (props) => {
   );
 }
 
-export default Test;
+const mapStateToProps = (state) => ({
+  currentUser: state.currentUser,
+  currentTest: state.currentTest,
+  testScriptPosition: state.testScriptPosition
+});
+
+export default connect(mapStateToProps)(Test);
