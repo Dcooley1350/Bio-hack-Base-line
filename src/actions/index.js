@@ -1,8 +1,8 @@
-import constants from './../constants';
+import Constants from './../constants';
 import firebase from 'firebase';
 
-const { types } = constants;
-const { firebaseConfig } = constants;
+const { constants } = Constants;
+const { firebaseConfig } = Constants;
 
 firebase.initializeApp(firebaseConfig);
 
@@ -31,6 +31,6 @@ export function sendTestToFireBase(_expCondition, _expConditionNotes, _Time, _Da
 
 
 export const newCurrentTest = (test) => ({
-    type: types.NEW_CURRENT_TEST,
+    type: constants.NEW_CURRENT_TEST,
     test
 })

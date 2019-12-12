@@ -1,6 +1,5 @@
 import React from 'react';
 import Header from './Header';
-import Footer from './Footer';
 import Splash from './Splash';
 import SignIn from './SignIn';
 import SignOut from './SignOut';
@@ -26,7 +25,6 @@ const Application = (props) => {
                     <Route path='/Analysis' render={()=><Analysis currentRouterPath='/Analysis'/>}/>
                     <Route path='/Test' render={()=><Test currentRouterPath='/Test'/>}/>
                     <Route path='/Error404' component={Error404}/>
-                <Footer/>
             </Router>
         </div>
 

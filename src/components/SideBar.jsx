@@ -1,38 +1,44 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 const SideNav = (props) => {
   let greeting = null;
-  let details = null;
-  let newKegButton = null;
   const sideNavStyle= {
     height: '100vh',
     backgroundColor: '#ececeb',
     width: '100%'
   };
-  const buttonStyle = {
-    width: '100%',
-    backgroundColor: '#e25822',
-    margin: '3px'
-  };
+
+  const greetingStyle={
+    textAlign: 'center',
+  }
+
   if(props.currentRouterPath === '/Archive'){
-    greeting = <p>Welcome to Archive</p>;
+    greeting ='Archive';
   }
   else if(props.currentRouterPath === '/Test'){
-    greeting = <p>Welcome to Test</p>;
+    greeting ='Test';
+      
   }
   else if(props.currentRouterPath === '/Analysis'){
-      greeting = <p>Welcome to Analysis</p>
+      greeting ='Analysis'
   }
   else if(props.currentRouterPath === '/DashBoard'){
-      greeting = <p>Welcome to DashBoard</p>
+      greeting ='DashBoard'
   }
   return ( 
     <div style={sideNavStyle}>
-    <br/>
-      {greeting}
-  
+      <br/>
+      <h3 style={greetingStyle}>{greeting}</h3>
+
     </div>
   );
 };
+
+const mapStateToProps = (state) => ({
+  currentUser: state.currentUser,
+  testsById: state.testsById,
+  currentTest: state.currentTest
+});
  
-export default SideNav;
+export default connect(mapStateToProps)(SideNav);
