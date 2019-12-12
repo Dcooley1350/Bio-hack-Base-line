@@ -2,6 +2,7 @@ import React from 'react';
 import Button from '@material-ui/core/Button';
 import { advanceTestScript } from '../../actions/testScriptActions';
 import { connect } from 'react-redux';
+import { addReactionTimeResult } from '../../actions/currentTestActions';
 
 class REACTionTimeTest extends React.Component {
     constructor(props) {
@@ -12,6 +13,7 @@ class REACTionTimeTest extends React.Component {
     onAdvanceButtonClick(event){
     event.preventDefault();
        this.props.dispatch(advanceTestScript());
+       this.props.dispatch(addReactionTimeResult("result",this.props.id))
     };
     render() {
         const buttonStyle={

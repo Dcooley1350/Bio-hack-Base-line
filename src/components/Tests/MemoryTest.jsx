@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { advanceTestScript } from './../../actions/testScriptActions';
 import Button from '@material-ui/core/Button';
+import { addMemoryTestResult } from '../../actions/currentTestActions'
 
 class MemoryTest extends React.Component {
     constructor(props) {
@@ -14,6 +15,7 @@ class MemoryTest extends React.Component {
     onAdvanceButtonClick(event){
         event.preventDefault();
        this.props.dispatch(advanceTestScript());
+       this.props.dispatch(addMemoryTestResult("result",this.props.id));
     }
     render() {
         const buttonStyle={

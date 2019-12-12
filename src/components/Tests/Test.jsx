@@ -28,31 +28,31 @@ const Test = (props) => {
       case 1:
         return(<NewTestForm/>);
       case 2:
-        return(<ReactionTimeTest id={props.testScriptPosition}/>);
+        return(<ReactionTimeTest id='1'/>);
       case 3:
-        return(<ReactionTimeTest id={props.testScriptPosition}/>);
+        return(<ReactionTimeTest id='2'/>);
       case 4:
-        return(<ReactionTimeTest id={props.testScriptPosition}/>);
+        return(<ReactionTimeTest id='3'/>);
       case 5:
-        return(<ReactionTimeTest id={props.testScriptPosition}/>);
+        return(<ReactionTimeTest id='4'/>);
       case 6:
-        return(<ReactionTimeTest id={props.testScriptPosition}/>);
+        return(<ReactionTimeTest id='5'/>);
       case 7:
-        return(<MemoryTest memoryItems='5' id={props.testScriptPosition}/>);
+        return(<MemoryTest memoryItems='5' id='1'/>);
       case 8:
-        return(<MemoryTest memoryItems='6' id={props.testScriptPosition}/>);
+        return(<MemoryTest memoryItems='6' id='2'/>);
       case 9:
-        return(<MemoryTest memoryItems='7' id={props.testScriptPosition}/>);
+        return(<MemoryTest memoryItems='7' id='3'/>);
       case 10:
-        return(<MemoryTest memoryItems='8' id={props.testScriptPosition}/>);
+        return(<MemoryTest memoryItems='8' id='4'/>);
       case 11:
-        return(<MemoryTest memoryItems='9' id={props.testScriptPosition}/>);
+        return(<MemoryTest memoryItems='9' id='5'/>);
       case 12:
-        return(<MemoryTest memoryItems='10' id={props.testScriptPosition}/>);
+        return(<MemoryTest memoryItems='10' id='6'/>);
       case 13:
-        return(<MemoryTest memoryItems='11' id={props.testScriptPosition}/>);
+        return(<MemoryTest memoryItems='11' id='7'/>);
       case 14:
-        return(<MemoryTest memoryItems='12' id={props.testScriptPosition}/>);
+        return(<MemoryTest memoryItems='12' id='8'/>);
       default:
         return(<p>TESTING IS BROKEN at {props.testScriptPosition}</p>)
 
