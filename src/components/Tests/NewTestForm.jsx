@@ -6,7 +6,8 @@ import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
 import DateTime from '@material-ui/core/';
 import { connect } from 'react-redux';
-import { newCurrentTest } from './../actions/index'
+import { newCurrentTest } from '../../actions/index'
+import { advanceTestScript } from '../../actions/testScriptActions';
 
 
 class newTestForm extends React.Component {
@@ -14,11 +15,11 @@ class newTestForm extends React.Component {
         super(props);
         let state = {
             date: '',
-            time: '',
+            time: ' ',
             expCondition: '',
-            expConditionNotes: '',
-            ctrlCondition: '',
-            ctrlConditionNotes: '',
+            expConditionNotes: ' ',
+            ctrlCondition: ' ',
+            ctrlConditionNotes: ' ',
         }
         this.onInputFieldChange=this.onInputFieldChange.bind(this);
         this.onNewTestSubmit=this.onNewTestSubmit.bind(this);
@@ -31,17 +32,24 @@ class newTestForm extends React.Component {
     }
     onNewTestSubmit(event) {
         event.preventDefault();
-        const test = {
-            date: this.state.date,
-            time: this.state.time,
-            expCondition: this.state.expCondition,
-            expConditionNotes: this.state.expConditionNotes,
-            ctrlCondition: this.state.ctrlCondition,
-            ctrlCondition: this.state.ctrlConditionNotes
+        if(this.state === null){
+            alert("Enter some info");
+        } 
+        else{
+            const test = {
+                date: this.state.date,
+                time: this.state.time,
+                expCondition: this.state.expCondition,
+                expConditionNotes: this.state.expConditionNotes,
+                ctrlCondition: this.state.ctrlCondition,
+                ctrlCondition: this.state.ctrlConditionNotes
+            }
+            console.log(test);
+            console.log(this.state);
+            this.props.dispatch(newCurrentTest(test))
+            this.props.dispatch(advanceTestScript());
+
         }
-        console.log(test);
-        console.log(this.state);
-        this.props.dispatch(newCurrentTest(test))
 
     };
     render() {

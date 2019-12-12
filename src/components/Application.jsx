@@ -7,7 +7,7 @@ import Register from './Register';
 import DashBoard from './DashBoard';
 import Archive from './Archive';
 import Analysis from './Analysis';
-import Test from './Test';
+import Test from './Tests/Test';
 import Error404 from './Error404';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
