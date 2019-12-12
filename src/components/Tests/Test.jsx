@@ -8,6 +8,7 @@ import { connect } from 'react-redux';
 import ReactionTimeTest from './REACTionTimeTest';
 import MemoryTest from './MemoryTest';
 import StartTestInfo from './StartTestInfo';
+import EndTestResults from './EndTestResults';
 
 const testStyles = makeStyles(theme => ({
   root: {
@@ -53,6 +54,8 @@ const Test = (props) => {
         return(<MemoryTest memoryItems='11' id='7'/>);
       case 14:
         return(<MemoryTest memoryItems='12' id='8'/>);
+        case 15:
+        return(<EndTestResults/>);
       default:
         return(<p>TESTING IS BROKEN at {props.testScriptPosition}</p>)
 

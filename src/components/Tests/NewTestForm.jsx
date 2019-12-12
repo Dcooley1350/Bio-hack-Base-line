@@ -42,10 +42,10 @@ class newTestForm extends React.Component {
                 expCondition: this.state.expCondition,
                 expConditionNotes: this.state.expConditionNotes,
                 ctrlCondition: this.state.ctrlCondition,
-                ctrlCondition: this.state.ctrlConditionNotes
+                ctrlConditionNotes: this.state.ctrlConditionNotes
             }
-            console.log(test);
-            console.log(this.state);
+            console.log(this.state.ctrlCondition);
+            console.log(test.ctrlCondition);
             this.props.dispatch(newCurrentTest(test))
             this.props.dispatch(advanceTestScript());
 
@@ -82,10 +82,10 @@ class newTestForm extends React.Component {
                             </Grid>
                             <Grid container>
                                 <Grid item xs={6}>
-                                    <label htmlFor='ctrlConditions'>ControlConditions:</label>
-                                    <TextField type='text' id='ctrlConditions' fullWidth InputLabelProps={{ shrink: true }} onChange={this.onInputFieldChange}/>
-                                    <label htmlFor='ctrlConditionsNotes'>Control Conditions Notes:</label>
-                                    <TextField type='text' id='ctrlConditionsNotes' fullWidth InputLabelProps={{ shrink: true }} onChange={this.onInputFieldChange}/>
+                                    <label htmlFor='ctrlCondition'>ControlConditions:</label>
+                                    <TextField type='text' id='ctrlCondition' fullWidth InputLabelProps={{ shrink: true }} onChange={this.onInputFieldChange}/>
+                                    <label htmlFor='ctrlConditionNotes'>Control Conditions Notes:</label>
+                                    <TextField type='text' id='ctrlConditionNotes' fullWidth InputLabelProps={{ shrink: true }} onChange={this.onInputFieldChange}/>
                                 </Grid>
                                 <Grid item xs={6}>
 

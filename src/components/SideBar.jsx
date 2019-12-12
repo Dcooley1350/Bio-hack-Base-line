@@ -21,7 +21,8 @@ const SideNav = (props) => {
     }
     else if (props.currentRouterPath === '/Test') {
       greeting = 'Test';
-      console.log(props.currentTest);
+      console.log(props)
+      console.log(props.currentTest.ctrlCondition);
       if (props.currentTest == '')
          content = <p>Test data will appear here as test progresses.</p>
       else {
