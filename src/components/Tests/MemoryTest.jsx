@@ -13,18 +13,20 @@ class MemoryTest extends React.Component {
         this.state = { 
             scriptPosition: 0,
             keyNumbers: []
-         };
-         this.setKeyNumbers();
-         this.memoryTestFinish=this.memoryTestFinish.bind(this);
-         this.setKeyNumbers=this.setKeyNumbers.bind(this);
-         this.advanceTestScript=this.advanceTestScript.bind(this);
-         this.startStopTestScript=this.startStopTestScript.bind(this);
+        };
+        this.testScriptTime = ''; 
+        this.setKeyNumbers();
+        this.memoryTestFinish=this.memoryTestFinish.bind(this);
+        this.setKeyNumbers=this.setKeyNumbers.bind(this);
+        this.advanceTestScript=this.advanceTestScript.bind(this);
+         this.startTestScript=this.startTestScript.bind(this);
+         this.stopTestScript=this.stopTestScript.bind(this);
     };
-
+    
     componentDidUpdate(prevProps) {
         if(prevProps.memoryItems !== this.props.memoryItems){
             this.setKeyNumbersState();
-
+            
         }
     }
     setKeyNumbers(){
@@ -43,7 +45,7 @@ class MemoryTest extends React.Component {
         }
         this.setState({ keyNumbers: newKeyNums })
     };
-
+    
     memoryTestFinish(correctNumbers,inputNumbers){
        this.setState({ scriptPosition: 0 });
        this.props.dispatch(advanceTestScript());
@@ -54,21 +56,16 @@ class MemoryTest extends React.Component {
         newScriptPosition = newScriptPosition +1;
         this.setState({ scriptPosition: newScriptPosition })
     };
-
-    startStopTestScript(event){
-        event.preventDefault();
-        console.log(event.target.value);
-        let startStop = event.target.id;
-        console.log(startStop);
-        var testScriptTime = setInterval(this.advanceTestScript, 2500);
-        if(startStop == 'start'){
-            testScriptTime();
-        }
-        else{
-            clearInterval(testScriptTime);
-        }
+    
+    startTestScript(event){
+        event.preventDefault();   
+        this.testScriptTime = setInterval(this.advanceTestScript, 2500);
+    }
+    
+    stopTestScript(){
+        clearInterval(this.testScriptTime);
     };
-   
+    
     render() {
         const memoryTestScript =() => {
             console.log(this.state.scriptPosition);
@@ -78,7 +75,7 @@ class MemoryTest extends React.Component {
                         <div>
                             <p>You will be shown a series of numbers between 1-100.</p>
                             <p>You will then be asked to recall those numbers.</p>
-                            <Button style={buttonStyle} color='primary' id="start" variant='outlined' onClick={this.startStopTestScript}>Begin Test</Button>
+                            <Button style={buttonStyle} color='primary' id="start" variant='outlined' onClick={this.startTestScript}>Begin Test</Button>
                         </div>
                     );
                 case 1:
@@ -98,7 +95,7 @@ class MemoryTest extends React.Component {
                         return ( <MemTestNumber id={this.state.keyNumbers[5]} />);
                     }
                     else{
-                        this.startStopTestScript();
+                        this.stopTestScript();
                         return(<MemTestInputField keyNumbers={this.state.keyNumbers} memoryTestFinish={this.memoryTestFinish} />);
 
                     }
@@ -107,7 +104,7 @@ class MemoryTest extends React.Component {
                         return (<MemTestNumber id={this.state.keyNumbers[6]} />);
                     }
                     else {
-                        this.startStopTestScript();
+                        this.stopTestScript();
                         return (<MemTestInputField keyNumbers={this.state.keyNumbers} memoryTestFinish={this.memoryTestFinish} />);
 
                     }
@@ -116,7 +113,7 @@ class MemoryTest extends React.Component {
                         return (<MemTestNumber id={this.state.keyNumbers[7]} />);
                     }
                     else {
-                        this.startStopTestScript();
+                        this.stopTestScript();
                         return (<MemTestInputField keyNumbers={this.state.keyNumbers} memoryTestFinish={this.memoryTestFinish} />);
 
                     }
@@ -125,7 +122,7 @@ class MemoryTest extends React.Component {
                         return (<MemTestNumber id={this.state.keyNumbers[8]} />);
                     }
                     else {
-                        this.startStopTestScript();
+                        this.stopTestScript();
                         return (<MemTestInputField keyNumbers={this.state.keyNumbers} memoryTestFinish={this.memoryTestFinish} />);
 
                     }
@@ -134,7 +131,7 @@ class MemoryTest extends React.Component {
                         return (<MemTestNumber id={this.state.keyNumbers[9]} />);
                     }
                     else {
-                        this.startStopTestScript();
+                        this.stopTestScript();
                         return (<MemTestInputField keyNumbers={this.state.keyNumbers} memoryTestFinish={this.memoryTestFinish} />);
 
                     }
@@ -143,7 +140,7 @@ class MemoryTest extends React.Component {
                         return (<MemTestNumber id={this.state.keyNumbers[10]} />);
                     }
                     else {
-                        this.startStopTestScript();
+                        this.stopTestScript();
                         return (<MemTestInputField keyNumbers={this.state.keyNumbers} memoryTestFinish={this.memoryTestFinish} />);
 
                     }
@@ -152,7 +149,7 @@ class MemoryTest extends React.Component {
                         return (<MemTestNumber id={this.state.keyNumbers[11]} />);
                     }
                     else {
-                        this.startStopTestScript();
+                        this.stopTestScript();
                         return (<MemTestInputField keyNumbers={this.state.keyNumbers} memoryTestFinish={this.memoryTestFinish} />);
 
                     }
