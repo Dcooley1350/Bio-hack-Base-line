@@ -8,8 +8,12 @@ const SideNav = (props) => {
   const sideNavStyle = {
     height: '100vh',
     backgroundColor: '#ececeb',
-    width: '100%'
+    width: '100%',
   };
+  const paddingStyle = {
+    paddingLeft: '10px',
+    paddingRight: '10px'
+  }
 
   const greetingStyle = {
     textAlign: 'center',
@@ -71,9 +75,12 @@ const SideNav = (props) => {
   sideNavConditionalRender();
   return (
     <div style={sideNavStyle}>
-      <br />
-      <h3 style={greetingStyle}>{greeting}</h3>
-      {content}
+      <div style={paddingStyle}>
+        <br />
+        <h3 style={greetingStyle}>{greeting}</h3>
+        {content}
+
+      </div>
 
     </div>
   );
