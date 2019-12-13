@@ -6,7 +6,7 @@ const MemTestNumber = (props) => {
     }
     return (  
         <div style={textAlignStyles}>
-            <h1>{props.memNumber}</h1>
+            <h1>{props.id}</h1>
         </div>
     );
 }
