@@ -4,6 +4,10 @@ import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button';
 
 const MemTestInputField = (props) => {
+    const buttonStyle = {
+        marginBottom: '10px'
+    }
+
     let _numbers = '';
     function handleFormSubmit(event){
         event.preventDefault();
