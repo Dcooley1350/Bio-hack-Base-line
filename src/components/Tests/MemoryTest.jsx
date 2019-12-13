@@ -2,8 +2,10 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { advanceTestScript } from './../../actions/testScriptActions';
 import Button from '@material-ui/core/Button';
-import { addMemoryTestResult } from '../../actions/currentTestActions'
-import Paper from '@material-ui/core/Paper'
+import { addMemoryTestResult } from '../../actions/currentTestActions';
+import Paper from '@material-ui/core/Paper';
+import MemTestInputField from './MemTestInputField';
+import MemTestNumber from './MemTestNumber';
 
 class MemoryTest extends React.Component {
     constructor(props) {
@@ -13,8 +15,10 @@ class MemoryTest extends React.Component {
             keyNumbers: []
          };
          this.setKeyNumbers();
-         this.onAdvanceButtonClick=this.onAdvanceButtonClick.bind(this);
+         this.memoryTestFinish=this.memoryTestFinish.bind(this);
          this.setKeyNumbers=this.setKeyNumbers.bind(this);
+         this.advanceTestScript=this.advanceTestScript.bind(this);
+         this.startStopTestScript=this.startStopTestScript.bind(this);
     };
 
     componentDidUpdate(prevProps) {
@@ -40,38 +44,122 @@ class MemoryTest extends React.Component {
         this.setState({ keyNumbers: newKeyNums })
     };
 
-    onAdvanceButtonClick(event){
-        event.preventDefault();
+    memoryTestFinish(correctNumbers,inputNumbers){
+       this.setState({ scriptPosition: 0 });
        this.props.dispatch(advanceTestScript());
-       this.props.dispatch(addMemoryTestResult("result",this.props.id));
+       this.props.dispatch(addMemoryTestResult(correctNumbers,inputNumbers,this.props.id));
     };
-    
+    advanceTestScript(){
+        let newScriptPosition = this.state.scriptPosition;
+        newScriptPosition = newScriptPosition +1;
+        this.setState({ scriptPosition: newScriptPosition })
+    };
+
+    startStopTestScript(event){
+        event.preventDefault();
+        console.log(event.target.value);
+        let startStop = event.target.id;
+        console.log(startStop);
+        var testScriptTime = setInterval(this.advanceTestScript, 2500);
+        if(startStop == 'start'){
+            testScriptTime();
+        }
+        else{
+            clearInterval(testScriptTime);
+        }
+    };
+   
     render() {
         const memoryTestScript =() => {
-            switch(this.state.scriptPostion){
+            console.log(this.state.scriptPosition);
+            switch(this.state.scriptPosition){
                 case 0:
                     return(
-                        <div></div>
+                        <div>
+                            <p>You will be shown a series of numbers between 1-100.</p>
+                            <p>You will then be asked to recall those numbers.</p>
+                            <Button style={buttonStyle} color='primary' id="start" variant='outlined' onClick={this.startStopTestScript}>Begin Test</Button>
+                        </div>
                     );
-                case 0:
-                    return();
-                case 0:
-                    return();
-                case 0:
-                    return();
-                case 0:
-                    return();
-                case 0:
-                    return();
-                case 0:
-                    return();
-                case 0:
-                    return();
-                case 0:
-                    return();
-                case 0:
-                    return();
-            }
+                case 1:
+                    return (<div></div>);
+                case 2:
+                    return(<MemTestNumber id={this.state.keyNumbers[0]}/>);
+                case 3:
+                    return (<MemTestNumber id={this.state.keyNumbers[1]} />);
+                case 4:
+                    return (<MemTestNumber id={this.state.keyNumbers[2]} />);
+                case 5:
+                    return (<MemTestNumber id={this.state.keyNumbers[3]} />);
+                case 6:
+                    return (<MemTestNumber id={this.state.keyNumbers[4]} />);
+                case 7:
+                    if(this.state.keyNumbers[5]){
+                        return ( <MemTestNumber id={this.state.keyNumbers[5]} />);
+                    }
+                    else{
+                        this.startStopTestScript();
+                        return(<MemTestInputField keyNumbers={this.state.keyNumbers} memoryTestFinish={this.memoryTestFinish} />);
+
+                    }
+                case 8:
+                    if (this.state.keyNumbers[6]) {
+                        return (<MemTestNumber id={this.state.keyNumbers[6]} />);
+                    }
+                    else {
+                        this.startStopTestScript();
+                        return (<MemTestInputField keyNumbers={this.state.keyNumbers} memoryTestFinish={this.memoryTestFinish} />);
+
+                    }
+                case 10:
+                    if (this.state.keyNumbers[7]) {
+                        return (<MemTestNumber id={this.state.keyNumbers[7]} />);
+                    }
+                    else {
+                        this.startStopTestScript();
+                        return (<MemTestInputField keyNumbers={this.state.keyNumbers} memoryTestFinish={this.memoryTestFinish} />);
+
+                    }
+                case 11:
+                    if (this.state.keyNumbers[8]) {
+                        return (<MemTestNumber id={this.state.keyNumbers[8]} />);
+                    }
+                    else {
+                        this.startStopTestScript();
+                        return (<MemTestInputField keyNumbers={this.state.keyNumbers} memoryTestFinish={this.memoryTestFinish} />);
+
+                    }
+                case 12:
+                    if (this.state.keyNumbers[9]) {
+                        return (<MemTestNumber id={this.state.keyNumbers[9]} />);
+                    }
+                    else {
+                        this.startStopTestScript();
+                        return (<MemTestInputField keyNumbers={this.state.keyNumbers} memoryTestFinish={this.memoryTestFinish} />);
+
+                    }
+                case 13:
+                    if (this.state.keyNumbers[10]) {
+                        return (<MemTestNumber id={this.state.keyNumbers[10]} />);
+                    }
+                    else {
+                        this.startStopTestScript();
+                        return (<MemTestInputField keyNumbers={this.state.keyNumbers} memoryTestFinish={this.memoryTestFinish} />);
+
+                    }
+                case 14:
+                    if (this.state.keyNumbers[11]) {
+                        return (<MemTestNumber id={this.state.keyNumbers[11]} />);
+                    }
+                    else {
+                        this.startStopTestScript();
+                        return (<MemTestInputField keyNumbers={this.state.keyNumbers} memoryTestFinish={this.memoryTestFinish} />);
+
+                    }
+                default:
+                    return(<h1>SomethingWentWrongInMemTestScript at position {this.state.scriptPosition}</h1>)
+
+            }   
         }
         console.log(this.state.keyNumbers);
         const buttonStyle={
@@ -85,7 +173,8 @@ class MemoryTest extends React.Component {
         return (
             <div style={mainDivStyle}>
                 <h2>MemoryTest #{this.props.id}</h2>
-                <Button style={buttonStyle} color='primary' variant='outlined' onClick={this.onAdvanceButtonClick}>Next</Button>
+                {memoryTestScript()}
+                <Button style={buttonStyle} color='primary' variant='outlined' onClick={this.memoryTestFinish}>Next</Button>
             </div>
         );
     };
