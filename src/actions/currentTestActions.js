@@ -6,6 +6,10 @@ export const newCurrentTest = (test) => ({
     test
 });
 
+export const resetCurrentTest = () => ({
+    type: constants.RESET_CURRENT_TEST
+})
+
 export const addMemoryTestResult = (result, id) => ({
     type: constants.ADD_MEMORY_TEST_RESULT,
     result,

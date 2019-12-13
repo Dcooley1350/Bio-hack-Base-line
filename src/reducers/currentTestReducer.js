@@ -12,15 +12,17 @@ const currentTestReducer = (state = '', action) => {
         case constants.ADD_REACTIONTIME_TEST_RESULT:
             let reactiionTestObjectKey= "ReactionTimeTest"+ action.id;
             newState= Object.assign({},state, { [reactiionTestObjectKey] : action.result})
-            console.log(newState);
             return newState;
 
         case constants.ADD_MEMORY_TEST_RESULT:
             let memoryTestObjectKey = "MemoryTest"+ action.id;
             newState = Object.assign({},state, { [memoryTestObjectKey] : action.result})
-            console.log(newState);
             return newState;
-            
+
+        case constants.RESET_CURRENT_TEST:
+            newState= '';
+            return newState;
+
         default:
             return state;
     }

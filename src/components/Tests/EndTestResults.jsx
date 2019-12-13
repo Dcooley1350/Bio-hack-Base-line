@@ -4,7 +4,8 @@ import Container from '@material-ui/core/Container';
 import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button';
 import { connect } from 'react-redux';
-import 
+import { resetCurrentTest } from '../../actions/currentTestActions'; 
+import { restartTestScript } from '../../actions/testScriptActions';
 
 const EndTestResults = (props) => {
     const alignCenterStyle = {
@@ -16,11 +17,16 @@ const EndTestResults = (props) => {
 
     function onSaveButtonClick(event){
         event.preventDefault()
-        console.log(this.props)
+        props.dispatch(restartTestScript());
+        props.dispatch(resetCurrentTest());
+        console.log(props);
     }
+
     function onDiscardButtonClick(event){
         event.preventDefault()
-        console.log(this.props);
+        props.dispatch(restartTestScript());
+        props.dispatch(resetCurrentTest());
+        console.log(props);
     }
     return (
         <Container maxWidth='md'>
