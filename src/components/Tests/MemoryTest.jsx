@@ -11,11 +11,26 @@ class MemoryTest extends React.Component {
             scriptPosition: 0,
             keyNumbers: []
          };
+         this.setKeyNumbers();
          this.onAdvanceButtonClick=this.onAdvanceButtonClick.bind(this);
          this.setKeyNumbers=this.setKeyNumbers.bind(this);
     };
 
+    componentDidUpdate(prevProps) {
+        if(prevProps.memoryItems !== this.props.memoryItems){
+            this.setKeyNumbersState();
+            console.log(this.state.keyNumbers);
+        }
+    }
     setKeyNumbers(){
+        let newKeyNums = [];
+        for (var i = 0; i < this.props.memoryItems; ++i) {
+            let num = Math.floor(Math.random() * 101);
+            newKeyNums.push(num);
+        }
+        this.state.keyNumbers=newKeyNums
+    }
+    setKeyNumbersState(){
         let newKeyNums= [];
         for (var i = 0; i < this.props.memoryItems; ++i){
             let num = Math.floor(Math.random() * 101);
@@ -29,13 +44,9 @@ class MemoryTest extends React.Component {
        this.props.dispatch(advanceTestScript());
        this.props.dispatch(addMemoryTestResult("result",this.props.id));
     };
-    componentDidUpdate(){
-        console.log(this.props.memoryItems);
-        this.setKeyNumbers();
-    };
-
     
     render() {
+        console.log(this.state.keyNumbers);
         const buttonStyle={
             marginBottom: '10px'
         }

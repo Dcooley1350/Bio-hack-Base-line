@@ -44,8 +44,6 @@ class newTestForm extends React.Component {
                 ctrlCondition: this.state.ctrlCondition,
                 ctrlConditionNotes: this.state.ctrlConditionNotes
             }
-            console.log(this.state.ctrlCondition);
-            console.log(test.ctrlCondition);
             this.props.dispatch(newCurrentTest(test))
             this.props.dispatch(advanceTestScript());
 
