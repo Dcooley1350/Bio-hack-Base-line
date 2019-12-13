@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { advanceTestScript } from './../../actions/testScriptActions';
 import Button from '@material-ui/core/Button';
 import { addMemoryTestResult } from '../../actions/currentTestActions'
+import Paper from '@material-ui/core/Paper'
 
 class MemoryTest extends React.Component {
     constructor(props) {
@@ -19,7 +20,7 @@ class MemoryTest extends React.Component {
     componentDidUpdate(prevProps) {
         if(prevProps.memoryItems !== this.props.memoryItems){
             this.setKeyNumbersState();
-            console.log(this.state.keyNumbers);
+
         }
     }
     setKeyNumbers(){
@@ -46,14 +47,44 @@ class MemoryTest extends React.Component {
     };
     
     render() {
+        const memoryTestScript =() => {
+            switch(this.state.scriptPostion){
+                case 0:
+                    return(
+                        <div></div>
+                    );
+                case 0:
+                    return();
+                case 0:
+                    return();
+                case 0:
+                    return();
+                case 0:
+                    return();
+                case 0:
+                    return();
+                case 0:
+                    return();
+                case 0:
+                    return();
+                case 0:
+                    return();
+                case 0:
+                    return();
+            }
+        }
         console.log(this.state.keyNumbers);
         const buttonStyle={
             marginBottom: '10px'
         }
+        const mainDivStyle = {
+            textAlign: 'center',
+            height: '100%'
+        }
         
         return (
-            <div>
-                <p>This is a MemoryTest. {this.props.id}</p>
+            <div style={mainDivStyle}>
+                <h2>MemoryTest #{this.props.id}</h2>
                 <Button style={buttonStyle} color='primary' variant='outlined' onClick={this.onAdvanceButtonClick}>Next</Button>
             </div>
         );
