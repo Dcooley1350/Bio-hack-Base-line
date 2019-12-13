@@ -1,5 +1,4 @@
 import  Constants from './../constants';
-console.log(Constants);
 const { constants } = Constants;
 
 export default (state = 0, action) => {

@@ -20,7 +20,6 @@ const signedInLinkStyles = makeStyles( (theme) => ({
 const SignedInLinks = () => {
 
     const classes = signedInLinkStyles()
-    console.log(classes.buttonStyle);
     return (  
         <div>
             <NavLink className={classes.linkStyle} to='/Test'><Button className={classes.buttonStyle} color="inherit"><Typography variant="h6">Test</Typography></Button></NavLink>

@@ -19,10 +19,8 @@ const testStyles = makeStyles(theme => ({
 
 const Test = (props) => {
   const classes = testStyles()
-  console.log()
 
   const testScriptConditionalRender = () => {
-    console.log("tacos",props)
     switch(props.testScriptPosition){
       case 0:
         return(<StartTestInfo/>);
