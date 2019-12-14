@@ -3,6 +3,7 @@ import TextField from '@material-ui/core/TextField'
 import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
+import v4 from 'uuid'
 
 class MemTestInputField extends React.Component {
     constructor(props){
@@ -52,7 +53,7 @@ class MemTestInputField extends React.Component {
                 <h3> Input a single number then click input number.</h3>
                 <h3> Submit test when you have added all numbers from memory.</h3>
                 <h5>
-                    {this.state.inputNums.map(function (num) { return (<em>{num}, </em>)})}
+                    {this.state.inputNums.map(function (num) { return (<em key={v4()}>{num}, </em>)})}
                 </h5>
                 <form id='inputNum' onSubmit={this.handleNumberInput}>
                     <Grid container>

@@ -9,13 +9,26 @@ const currentTestReducer = (state = '', action) => {
             return newState;
 
         case constants.ADD_REACTIONTIME_TEST_RESULT:
-            let reactiionTestObjectKey= "ReactionTimeTest"+ action.id;
-            newState= Object.assign({},state, { [reactiionTestObjectKey] : action.result})
+            
+            let reactionTestObjectKey= "ReactionTimeTest"+ action.id;
+            newState= Object.assign({},state, { [reactionTestObjectKey] : action.result
+            });
             return newState;
-
-        case constants.ADD_MEMORY_TEST_RESULT:
-            let memoryTestObjectKey = "MemoryTest"+ action.id;
-            newState = Object.assign({},state, { [memoryTestObjectKey] : action.result})
+            
+            case constants.ADD_MEMORY_TEST_RESULT:
+                let correctNumberString= '';
+                let userInputNumbersString= '';
+                console.log(action.correctNumbers)
+                action.correctNumbers.forEach(num => {correctNumberString+= num + ', '});
+                action.inputNumbers.forEach(num => {userInputNumbersString+=num+', '})
+                let memoryTestObjectKey = "MemoryTest"+ action.id;
+                newState = Object.assign({},state, { [memoryTestObjectKey] : {
+                correctNumbers: action.correctNumbers,
+                userInputNumbers: action.inputNumbers,
+                correctNumberString: correctNumberString,
+                userInputNumbersString: userInputNumbersString,
+                }});
+            console.log(newState);
             return newState;
 
         case constants.RESET_CURRENT_TEST:

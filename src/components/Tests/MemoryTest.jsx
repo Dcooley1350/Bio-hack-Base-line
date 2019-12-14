@@ -49,7 +49,12 @@ class MemoryTest extends React.Component {
     memoryTestFinish(correctNumbers,inputNumbers){
        this.setState({ scriptPosition: 0 });
        this.props.dispatch(advanceTestScript());
-       this.props.dispatch(addMemoryTestResult(correctNumbers,inputNumbers,this.props.id));
+       let result = {
+           correctNumbers,
+           inputNumbers
+       }
+       console.log(result);
+       this.props.dispatch(addMemoryTestResult(result,this.props.id));
     };
     advanceTestScript(){
         let newScriptPosition = this.state.scriptPosition;
@@ -59,7 +64,7 @@ class MemoryTest extends React.Component {
     
     startTestScript(event){
         event.preventDefault();   
-        this.testScriptTime = setInterval(this.advanceTestScript, 2500);
+        this.testScriptTime = setInterval(this.advanceTestScript, 1000);
     }
     
     stopTestScript(){
@@ -171,7 +176,6 @@ class MemoryTest extends React.Component {
             <div style={mainDivStyle}>
                 <h2>MemoryTest #{this.props.id}</h2>
                 {memoryTestScript()}
-                <Button style={buttonStyle} color='primary' variant='outlined' onClick={this.memoryTestFinish}>Next</Button>
             </div>
         );
     };

@@ -12,7 +12,8 @@ export const resetCurrentTest = () => ({
 
 export const addMemoryTestResult = (result, id) => ({
     type: constants.ADD_MEMORY_TEST_RESULT,
-    result,
+    correctNumbers: result.correctNumbers,
+    inputNumbers: result.inputNumbers,
     id
 });
 

@@ -47,14 +47,14 @@ const SideNav = (props) => {
             </ul>
             <h5>Memory Tests:</h5>
             <ul>
-              {props.currentTest.MemoryTest1 ? (<li>Test 1: {props.currentTest.MemoryTest1}</li>) : (<li>Test 1: </li>)}
-              {props.currentTest.MemoryTest2 ? (<li>Test 2: {props.currentTest.MemoryTest2}</li>) : (<li>Test 2: </li>)}
-              {props.currentTest.MemoryTest3 ? (<li>Test 3: {props.currentTest.MemoryTest3}</li>) : (<li>Test 3: </li>)}
-              {props.currentTest.MemoryTest4 ? (<li>Test 4: {props.currentTest.MemoryTest4}</li>) : (<li>Test 4: </li>)}
-              {props.currentTest.MemoryTest5 ? (<li>Test 5: {props.currentTest.MemoryTest5}</li>) : (<li>Test 5: </li>)}
-              {props.currentTest.MemoryTest6 ? (<li>Test 6: {props.currentTest.MemoryTest6}</li>) : (<li>Test 6: </li>)}
-              {props.currentTest.MemoryTest7 ? (<li>Test 7: {props.currentTest.MemoryTest7}</li>) : (<li>Test 7: </li>)}
-              {props.currentTest.MemoryTest8 ? (<li>Test 8: {props.currentTest.MemoryTest8}</li>) : (<li>Test 8: </li>)}
+              {props.currentTest.MemoryTest1 ? (<li>Test 1: {props.currentTest.MemoryTest1.userInputNumbersString}</li>) : (<li>Test 1: </li>)}
+            {props.currentTest.MemoryTest2 ? (<li>Test 2: {props.currentTest.MemoryTest2.userInputNumbersString}</li>) : (<li>Test 2: </li>)}
+            {props.currentTest.MemoryTest3 ? (<li>Test 3: {props.currentTest.MemoryTest3.userInputNumbersString}</li>) : (<li>Test 3: </li>)}
+            {props.currentTest.MemoryTest4 ? (<li>Test 4: {props.currentTest.MemoryTest4.userInputNumbersString}</li>) : (<li>Test 4: </li>)}
+            {props.currentTest.MemoryTest5 ? (<li>Test 5: {props.currentTest.MemoryTest5.userInputNumbersString}</li>) : (<li>Test 5: </li>)}
+            {props.currentTest.MemoryTest6 ? (<li>Test 6: {props.currentTest.MemoryTest6.userInputNumbersString}</li>) : (<li>Test 6: </li>)}
+            {props.currentTest.MemoryTest7 ? (<li>Test 7: {props.currentTest.MemoryTest7.userInputNumbersString}</li>) : (<li>Test 7: </li>)}
+            {props.currentTest.MemoryTest8 ? (<li>Test 8: {props.currentTest.MemoryTest8.userInputNumbersString}</li>) : (<li>Test 8: </li>)}
             </ul>
           </div>;
 
