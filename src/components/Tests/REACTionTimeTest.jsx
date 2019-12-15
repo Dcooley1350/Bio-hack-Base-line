@@ -3,6 +3,8 @@ import Button from '@material-ui/core/Button';
 import { advanceTestScript } from '../../actions/testScriptActions';
 import { connect } from 'react-redux';
 import { addReactionTimeResult } from '../../actions/currentTestActions';
+import ReactionTimeTestGrid from './ReactionTImeTestGrid.jsx'
+import ReactionTimeIcon from './ReactionTimeIcon';
 
 class REACTionTimeTest extends React.Component {
     constructor(props) {
@@ -12,11 +14,15 @@ class REACTionTimeTest extends React.Component {
             iconPositions: [],
             correctIcon: undefined,
           };
+        this.testScriptTime= '';
         this.setIconPositions();
-        this.setCorrectIcon()
+        this.setCorrectIcon();
         this.onAdvanceButtonClick=this.onAdvanceButtonClick.bind(this);
         this.setIconPositions=this.setIconPositions.bind(this);
         this.setCorrectIcon=this.setCorrectIcon.bind(this);
+        this.stopTestScript=this.stopTestScript.bind(this);
+        this.handleBeginTest=this.handleBeginTest.bind(this);
+        this.advanceTestScript=this.advanceTestScript.bind(this);
     };
 
     componentDidUpdate(prevProps){
@@ -30,6 +36,7 @@ class REACTionTimeTest extends React.Component {
     event.preventDefault();
        this.props.dispatch(advanceTestScript());
        this.props.dispatch(addReactionTimeResult("result",this.props.id))
+       this.setState({ scriptPosition: 0, iconPositions: [], correctIcon: null });
     };
     setCorrectIcon(){
         let correctIcon = Math.floor(Math.random() * 12);
@@ -42,7 +49,49 @@ class REACTionTimeTest extends React.Component {
         let randomIconPositions = positions.sort(random);
         this.setState({ iconPositions: randomIconPositions })
     }
+
+    advanceTestScript() {
+        let newScriptPosition = this.state.scriptPosition;
+        newScriptPosition = newScriptPosition + 1;
+        this.setState({ scriptPosition: newScriptPosition })
+    };
+    
+    handleBeginTest(event){
+        this.advanceTestScript();
+        this.testScriptTime = setInterval(this.advanceTestScript, 1000);
+    }
+
+    stopTestScript(){
+        clearInterval(this.testScriptTime);
+    }
+
     render() {
+        function reactionTimeTestScript(){
+            switch(this.state.scriptPosition){
+                case 0:
+
+                    return(
+                        <div>
+                            <h5>After you click 'begin' below, a countdown will start. At the end of the countdown, a grid of icons will appear, along with an instruction. Find and click the icon instructed. Your time will be recorded.</h5>
+                            <Button style={buttonStyle} color='primary' variant='outlined' onClick={handleBeginTest}>Begin</Button>
+                        </div>
+                    );
+                case 1:
+                    return(<h1>3</h1>);
+                case 2:
+                    return (<h1>2</h1>);
+                case 3:
+                    return (<h1>1</h1>);
+                case 4:
+                    this.stopTestScript();
+                    return(
+                        <div>
+                            <ReactionTimePrompt correctIcon={this.state.correctIcon}/>
+                            <ReactionTimeTestGrid iconAssignment={this.state.iconPositions} handleCorrectIconClick={this.onAdvanceButtonClick}/>
+                        </div>
+                    );
+            }
+        }
         const buttonStyle={
             marginBottom: '10px'
         };
@@ -52,7 +101,7 @@ class REACTionTimeTest extends React.Component {
         }
         return (
             <div style={mainDivStyle}>
-                <p>Reaction Time Test  #{this.props.id}</p>
+                <h2>Reaction Time Test  #{this.props.id}</h2>
                 <Button style={buttonStyle} color='primary' variant='outlined' onClick={this.onAdvanceButtonClick}>Next</Button>
             </div>
         );
