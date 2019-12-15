@@ -13,13 +13,16 @@ class REACTionTimeTest extends React.Component {
             correctIcon: undefined,
           };
         this.setIconPositions();
+        this.setCorrectIcon()
         this.onAdvanceButtonClick=this.onAdvanceButtonClick.bind(this);
         this.setIconPositions=this.setIconPositions.bind(this);
+        this.setCorrectIcon=this.setCorrectIcon.bind(this);
     };
 
     componentDidUpdate(prevProps){
-        if(prevProps.iconPositions !== this.props.memoryItems){
+        if(prevProps.iconPositions !== this.props.iconPositions){
             this.setIconPositions();
+            this.setCorrectIcon();
         }
     }
 
@@ -28,6 +31,10 @@ class REACTionTimeTest extends React.Component {
        this.props.dispatch(advanceTestScript());
        this.props.dispatch(addReactionTimeResult("result",this.props.id))
     };
+    setCorrectIcon(){
+        let correctIcon = Math.floor(Math.random() * 12);
+        this.setState({ iconPosition: correctIcon})
+    }
 
     setIconPositions(){
         let positions= [1,2,3,4,5,6,7,8,9,10,11,12];
