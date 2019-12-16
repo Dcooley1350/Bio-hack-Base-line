@@ -3,7 +3,8 @@ import firebase from 'firebase';
 
 const { constants } = Constants;
 const { firebaseConfig } = Constants;
-
+console.log(constants);
+console.log(firebaseConfig);
 firebase.initializeApp(firebaseConfig);
 
 const users = firebase.database().ref('users');
