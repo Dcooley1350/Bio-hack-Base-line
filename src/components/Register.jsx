@@ -10,8 +10,7 @@ class RegisterUser extends React.Component {
     constructor(props) {
         super(props)
         let state = {
-            displayName: '',
-            lastName: '',
+            displayName: '',   
             email: '',
             password: '',
         }
@@ -25,7 +24,7 @@ class RegisterUser extends React.Component {
     }
     onNewUserSubmit(event) {
         event.preventDefault();
-        sendNewUserToFireBase(this.state.email, this.state.password)();
+        sendNewUserToFireBase(this.state.email, this.state.password);
         console.log(this.state);
 
     }
@@ -44,7 +43,7 @@ class RegisterUser extends React.Component {
                             <h5>Register</h5>
                             <Grid container spacing={0}>
                                 <Grid item xs={6}>
-                                    <label htmlFor="displayName">DisplayName:</label>
+                                    <label htmlFor="displayName">Display Name:</label>
                                     <TextField placeholder='first' margin="normal" fullWidth type="displayName" id="displayName" InputLabelProps={{ shrink: true, }} onChange={this.onInputFieldChange} />
                                 </Grid>
                                 <Grid item xs={6}>

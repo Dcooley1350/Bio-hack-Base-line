@@ -67,7 +67,7 @@ class MemoryTest extends React.Component {
     
     startTestScript(event){
         event.preventDefault();   
-        this.testScriptTime = setInterval(this.advanceTestScript, 1000);
+        this.testScriptTime = setInterval(this.advanceTestScript, 500);
     }
     
     stopTestScript(){

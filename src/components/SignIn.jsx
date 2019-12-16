@@ -2,7 +2,8 @@ import React from 'react';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import Paper from '@material-ui/core/Paper'
-import Container from '@material-ui/core/Container'
+import Container from '@material-ui/core/Container';
+import { logInUser } from '../actions';
 
 class SignIn extends React.Component {
   constructor(props) {
@@ -22,6 +23,7 @@ class SignIn extends React.Component {
 
   onSignIn(event) {
     event.preventDefault();
+    logInUser(this.state.email, this.state.password)();
     console.log(this.state);
   }
   render() {

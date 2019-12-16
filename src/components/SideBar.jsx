@@ -26,9 +26,9 @@ const SideNav = (props) => {
     else if (props.currentRouterPath === '/Test') {
       greeting = 'Test';
       if (props.currentTest == '')
-         content = <p>Test data will appear here as test progresses.</p>
+        content = <p>Test data will appear here as test progresses.</p>
       else {
-        content = 
+        content =
           <div>
             <h5>Info:</h5>
             <ul>
@@ -39,7 +39,7 @@ const SideNav = (props) => {
             </ul>
             <h5>Reaction Time Tests:</h5>
             <ul>
-              {props.currentTest.ReactionTimeTest1 ? (<li>Test 1: {props.currentTest.ReactionTimeTest1}</li>) : (<li>Test 1: </li>)}
+              {props.currentTest.ReactionTimeTest1 ? (<li>Test 1: {props.currentTest.ReactionTimeTest1}</li>) : (<li>Test 1: Sucks</li>)}
               {props.currentTest.ReactionTimeTest2 ? (<li>Test 2: {props.currentTest.ReactionTimeTest2}</li>) : (<li>Test 2: </li>)}
               {props.currentTest.ReactionTimeTest3 ? (<li>Test 3: {props.currentTest.ReactionTimeTest3}</li>) : (<li>Test 3: </li>)}
               {props.currentTest.ReactionTimeTest4 ? (<li>Test 4: {props.currentTest.ReactionTimeTest4}</li>) : (<li>Test 4: </li>)}
@@ -48,19 +48,18 @@ const SideNav = (props) => {
             <h5>Memory Tests:</h5>
             <ul>
               {props.currentTest.MemoryTest1 ? (<li>Test 1: {props.currentTest.MemoryTest1.userInputNumbersString}</li>) : (<li>Test 1: </li>)}
-            {props.currentTest.MemoryTest2 ? (<li>Test 2: {props.currentTest.MemoryTest2.userInputNumbersString}</li>) : (<li>Test 2: </li>)}
-            {props.currentTest.MemoryTest3 ? (<li>Test 3: {props.currentTest.MemoryTest3.userInputNumbersString}</li>) : (<li>Test 3: </li>)}
-            {props.currentTest.MemoryTest4 ? (<li>Test 4: {props.currentTest.MemoryTest4.userInputNumbersString}</li>) : (<li>Test 4: </li>)}
-            {props.currentTest.MemoryTest5 ? (<li>Test 5: {props.currentTest.MemoryTest5.userInputNumbersString}</li>) : (<li>Test 5: </li>)}
-            {props.currentTest.MemoryTest6 ? (<li>Test 6: {props.currentTest.MemoryTest6.userInputNumbersString}</li>) : (<li>Test 6: </li>)}
-            {props.currentTest.MemoryTest7 ? (<li>Test 7: {props.currentTest.MemoryTest7.userInputNumbersString}</li>) : (<li>Test 7: </li>)}
-            {props.currentTest.MemoryTest8 ? (<li>Test 8: {props.currentTest.MemoryTest8.userInputNumbersString}</li>) : (<li>Test 8: </li>)}
+              {props.currentTest.MemoryTest2 ? (<li>Test 2: {props.currentTest.MemoryTest2.userInputNumbersString}</li>) : (<li>Test 2: </li>)}
+              {props.currentTest.MemoryTest3 ? (<li>Test 3: {props.currentTest.MemoryTest3.userInputNumbersString}</li>) : (<li>Test 3: </li>)}
+              {props.currentTest.MemoryTest4 ? (<li>Test 4: {props.currentTest.MemoryTest4.userInputNumbersString}</li>) : (<li>Test 4: </li>)}
+              {props.currentTest.MemoryTest5 ? (<li>Test 5: {props.currentTest.MemoryTest5.userInputNumbersString}</li>) : (<li>Test 5: </li>)}
+              {props.currentTest.MemoryTest6 ? (<li>Test 6: {props.currentTest.MemoryTest6.userInputNumbersString}</li>) : (<li>Test 6: </li>)}
+              {props.currentTest.MemoryTest7 ? (<li>Test 7: {props.currentTest.MemoryTest7.userInputNumbersString}</li>) : (<li>Test 7: </li>)}
+              {props.currentTest.MemoryTest8 ? (<li>Test 8: {props.currentTest.MemoryTest8.userInputNumbersString}</li>) : (<li>Test 8: </li>)}
             </ul>
           </div>;
 
-        
-      }
 
+      }
     }
     else if (props.currentRouterPath === '/Analysis') {
       greeting = 'Analysis'

@@ -2,9 +2,10 @@ import Constants from './../constants';
 const { constants } = Constants;
 
 
-// export const createTest = (test) => {
-//     return (dispatch, getState) => {
+export const sendUserToRedux = (user) => {
+    return {
+        type: constants.NEW_USER,
+        user
+    };
 
-//         dispatch()
-//     }
-// }
+}

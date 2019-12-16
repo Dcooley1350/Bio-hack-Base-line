@@ -2,6 +2,8 @@ import React from 'react';
 import Button from '@material-ui/core/Button';
 import Container from '@material-ui/core/Container';
 import Paper from '@material-ui/core/Paper';
+import { logOutUser } from '../actions';
+
 class SignOut extends React.Component {
     constructor(props) {
         super(props)
@@ -10,6 +12,7 @@ class SignOut extends React.Component {
 
     handleSignOut(event) {
         event.preventDefault();
+        logOutUser()();
     }
 
     render() {
@@ -26,7 +29,7 @@ class SignOut extends React.Component {
                             </div>
                             <div className="input-field">
                                 <br />
-                                <Button style={buttonStyle} type='submit' variant='outlined' color='secondary' className='btn btn-large'>Sign Out</Button>
+                                <Button style={buttonStyle} type='submit' variant='outlined' color='secondary' className='btn btn-large' onClick={this.handleSignOut}>Sign Out</Button>
                             </div>
                         </form>
                     </Container>

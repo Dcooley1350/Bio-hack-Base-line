@@ -1,5 +1,6 @@
 import Constants from './../constants';
 import firebase from 'firebase';
+import { sendUserToRedux } from './userActions';
 
 const { constants } = Constants;
 const { firebaseConfig } = Constants;
@@ -9,13 +10,32 @@ firebase.initializeApp(firebaseConfig);
 const users = firebase.database().ref('users');
 const tests = firebase.database().ref('tests');
 
-export function sendNewUserToFireBase(_firstName, _lastName, _email, _password) {
-    return () => users.push({
-        firstName: _firstName,
-        lastName: _lastName,
-        email: _email,
-        password: _password,
-    })
+export function sendNewUserToFireBase(email, password) {
+    console.log(email, password);
+    return () => firebase.auth().createUserWithEmailAndPassword(email, password).catch(function (error) {
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        console.log(errorCode, errorMessage);
+    });
+}
+
+export function logInUser(email, password) {
+    return () => firebase.auth().signInWithEmailAndPassword(email, password).catch(function (error) {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        console.log(errorCode, errorMessage);
+    });
+}
+
+export function logOutUser() {
+    return () => firebase.auth().signOut().then(function () {
+        console.log("sign out successfull");
+    }).catch(function (error) {
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        console.log(errorCode, errorMessage);
+    });
 }
 
 export function sendTestToFireBase(
@@ -69,6 +89,13 @@ export function watchFirebaseTestsRef() {
         })
     }
 }
+
+export function watchAuthStateChanged() {
+    return function(dispatch) {
+        firebase.auth().onAuthStateChanged(function (user) {
+        console.log("the user is",user);
+        dispatch(sendUserToRedux(user));
+        })}}
 
 
 export const newCurrentTest = (test) => ({
