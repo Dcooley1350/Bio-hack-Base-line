@@ -116,7 +116,7 @@ class MemoryTest extends React.Component {
                         return (<MemTestInputField keyNumbers={this.state.keyNumbers} memoryTestFinish={this.memoryTestFinish} />);
 
                     }
-                case 10:
+                case 9:
                     if (this.state.keyNumbers[7]) {
                         return (<MemTestNumber id={this.state.keyNumbers[7]} />);
                     }
@@ -125,7 +125,7 @@ class MemoryTest extends React.Component {
                         return (<MemTestInputField keyNumbers={this.state.keyNumbers} memoryTestFinish={this.memoryTestFinish} />);
 
                     }
-                case 11:
+                case 10:
                     if (this.state.keyNumbers[8]) {
                         return (<MemTestNumber id={this.state.keyNumbers[8]} />);
                     }
@@ -134,7 +134,7 @@ class MemoryTest extends React.Component {
                         return (<MemTestInputField keyNumbers={this.state.keyNumbers} memoryTestFinish={this.memoryTestFinish} />);
 
                     }
-                case 12:
+                case 11:
                     if (this.state.keyNumbers[9]) {
                         return (<MemTestNumber id={this.state.keyNumbers[9]} />);
                     }
@@ -143,7 +143,7 @@ class MemoryTest extends React.Component {
                         return (<MemTestInputField keyNumbers={this.state.keyNumbers} memoryTestFinish={this.memoryTestFinish} />);
 
                     }
-                case 13:
+                case 12:
                     if (this.state.keyNumbers[10]) {
                         return (<MemTestNumber id={this.state.keyNumbers[10]} />);
                     }
@@ -152,9 +152,18 @@ class MemoryTest extends React.Component {
                         return (<MemTestInputField keyNumbers={this.state.keyNumbers} memoryTestFinish={this.memoryTestFinish} />);
 
                     }
-                case 14:
+                case 13:
                     if (this.state.keyNumbers[11]) {
                         return (<MemTestNumber id={this.state.keyNumbers[11]} />);
+                    }
+                    else {
+                        this.stopTestScript();
+                        return (<MemTestInputField keyNumbers={this.state.keyNumbers} memoryTestFinish={this.memoryTestFinish} />);
+
+                    }
+                case 14:
+                    if (this.state.keyNumbers[12]) {
+                        return (<MemTestNumber id={this.state.keyNumbers[12]} />);
                     }
                     else {
                         this.stopTestScript();
