@@ -34,7 +34,7 @@ class MemoryTest extends React.Component {
     setKeyNumbers(){
         let newKeyNums = [];
         for (var i = 0; i < this.props.memoryItems; ++i) {
-            let num = Math.floor(Math.random() * 101);
+            let num = Math.floor(Math.random() * 11);
             newKeyNums.push(num);
         }
         this.state.keyNumbers= newKeyNums;
@@ -43,7 +43,7 @@ class MemoryTest extends React.Component {
     setKeyNumbersState(){
         let newKeyNums= [];
         for (var i = 0; i < this.props.memoryItems; ++i){
-            let num = Math.floor(Math.random() * 101);
+            let num = Math.floor(Math.random() * 11);
             newKeyNums.push(num);
         }
         this.setState({ keyNumbers: newKeyNums })
