@@ -24,11 +24,11 @@ const EndTestResults = (props) => {
         let _ctrlConditionNotes = props.currentTest.ctrlConditionNotes;
         let _expCondition = props.currentTest.expCondition;
         let _expConditionNotes= props.currentTest.expConditionNotes;
-        let _reactionTimeTest1 = props.currentTest.reactionTimeTest1;
-        let _reactionTimeTest2 = props.currentTest.reactionTimeTest2;
-        let _reactionTimeTest3 = props.currentTest.reactionTimeTest3;
-        let _reactionTimeTest4 = props.currentTest.reactionTimeTest4;
-        let _reactionTimeTest5 = props.currentTest.reactionTimeTest5;
+        let _reactionTimeTest1 = props.currentTest.ReactionTimeTest1;
+        let _reactionTimeTest2 = props.currentTest.ReactionTimeTest2;
+        let _reactionTimeTest3 = props.currentTest.ReactionTimeTest3;
+        let _reactionTimeTest4 = props.currentTest.ReactionTimeTest4;
+        let _reactionTimeTest5 = props.currentTest.ReactionTimeTest5;
         let _memoryTest1 = props.currentTest.MemoryTest1;
         let _memoryTest2 = props.currentTest.MemoryTest2;
         let _memoryTest3 = props.currentTest.MemoryTest3;
@@ -97,11 +97,11 @@ const EndTestResults = (props) => {
                             </div>
                             <h4>Reaction Time:</h4>
                             <ul>
-                                <li key='1'>Test 1: {props.currentTest.reactionTimeTest1}</li>
-                                <li key='2'>Test 2: {props.currentTest.reactionTimeTest2}</li>
-                                <li key='3'>Test 3: {props.currentTest.reactionTimeTest3}</li>
-                                <li key='4'>Test 4: {props.currentTest.reactionTimeTest4}</li>
-                                <li key='5'>Test 5: {props.currentTest.reactionTimeTest5}</li>
+                                <li key='1'>Test 1: {props.currentTest.ReactionTimeTest1}</li>
+                                <li key='2'>Test 2: {props.currentTest.ReactionTimeTest2}</li>
+                                <li key='3'>Test 3: {props.currentTest.ReactionTimeTest3}</li>
+                                <li key='4'>Test 4: {props.currentTest.ReactionTimeTest4}</li>
+                                <li key='5'>Test 5: {props.currentTest.ReactionTimeTest5}</li>
                             </ul>
                             <h4>Memory Test:</h4>
                             <ul>
