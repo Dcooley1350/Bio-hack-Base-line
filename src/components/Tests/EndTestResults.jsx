@@ -70,6 +70,7 @@ const EndTestResults = (props) => {
         props.dispatch(resetCurrentTest());
         console.log(props);
     }
+    console.log(props);
     return (
         <Container maxWidth='md'>
             <Paper>
@@ -104,14 +105,14 @@ const EndTestResults = (props) => {
                             </ul>
                             <h4>Memory Test:</h4>
                             <ul>
-                                <li key='1'>Test 1: {props.currentTest.MemoryTest1}</li>
-                                <li key='2'>Test 2: {props.currentTest.MemoryTest2}</li>
-                                <li key='3'>Test 3: {props.currentTest.MemoryTest3}</li>
-                                <li key='4'>Test 4: {props.currentTest.MemoryTest4}</li>
-                                <li key='5'>Test 5: {props.currentTest.MemoryTest5}</li>
-                                <li key='6'>Test 6: {props.currentTest.MemoryTest6}</li>
-                                <li key='7'>Test 7: {props.currentTest.MemoryTest7}</li>
-                                <li key='8'>Test 8: {props.currentTest.MemoryTest8}</li>
+                                <li key='1'>Test 1: user input: {props.currentTest.MemoryTest1.userInputNumbersString}</li>
+                                <li key='2'>Test 2: user input: {props.currentTest.MemoryTest2.userInputNumbersString}</li>
+                                <li key='3'>Test 3: user input: {props.currentTest.MemoryTest3.userInputNumbersString}</li>
+                                <li key='4'>Test 4: user input: {props.currentTest.MemoryTest4.userInputNumbersString}</li>
+                                <li key='5'>Test 5: user input: {props.currentTest.MemoryTest5.userInputNumbersString}</li>
+                                <li key='6'>Test 6:  user input: {props.currentTest.MemoryTest6.userInputNumbersString}</li>
+                                <li key='7'>Test 7: user input: {props.currentTest.MemoryTest7.userInputNumbersString}</li>
+                                <li key='8'>Test 8: user input: {props.currentTest.MemoryTest8.userInputNumbersString}</li>
                             </ul>
                         </Grid>
                         
