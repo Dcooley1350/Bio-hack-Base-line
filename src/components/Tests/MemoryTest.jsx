@@ -27,16 +27,19 @@ class MemoryTest extends React.Component {
         if(prevProps.memoryItems !== this.props.memoryItems){
             this.setKeyNumbersState();
             
+            
         }
     }
+
     setKeyNumbers(){
         let newKeyNums = [];
         for (var i = 0; i < this.props.memoryItems; ++i) {
             let num = Math.floor(Math.random() * 101);
             newKeyNums.push(num);
         }
-        this.state.keyNumbers=newKeyNums
+        this.state.keyNumbers= newKeyNums;
     }
+
     setKeyNumbersState(){
         let newKeyNums= [];
         for (var i = 0; i < this.props.memoryItems; ++i){
@@ -53,7 +56,7 @@ class MemoryTest extends React.Component {
            correctNumbers,
            inputNumbers
        }
-       console.log(result);
+
        this.props.dispatch(addMemoryTestResult(result,this.props.id));
     };
     advanceTestScript(){
@@ -73,7 +76,7 @@ class MemoryTest extends React.Component {
     
     render() {
         const memoryTestScript =() => {
-            console.log(this.state.scriptPosition);
+
             switch(this.state.scriptPosition){
                 case 0:
                     return(
@@ -163,7 +166,7 @@ class MemoryTest extends React.Component {
 
             }   
         }
-        console.log(this.state.keyNumbers);
+
         const buttonStyle={
             marginBottom: '10px'
         }
