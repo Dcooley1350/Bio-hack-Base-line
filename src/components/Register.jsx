@@ -4,12 +4,13 @@ import Grid from '@material-ui/core/Grid'
 import TextField from '@material-ui/core/TextField';
 import Container from '@material-ui/core/Container';
 import Paper from '@material-ui/core/Paper';
+import { sendNewUserToFireBase } from '../actions'
 
 class RegisterUser extends React.Component {
     constructor(props) {
         super(props)
         let state = {
-            firstName: '',
+            displayName: '',
             lastName: '',
             email: '',
             password: '',
@@ -24,6 +25,7 @@ class RegisterUser extends React.Component {
     }
     onNewUserSubmit(event) {
         event.preventDefault();
+        sendNewUserToFireBase(this.state.email, this.state.password)();
         console.log(this.state);
 
     }
@@ -42,12 +44,10 @@ class RegisterUser extends React.Component {
                             <h5>Register</h5>
                             <Grid container spacing={0}>
                                 <Grid item xs={6}>
-                                    <label htmlFor="firstName">First Name:</label>
-                                    <TextField placeholder='first' margin="normal" fullWidth type="firstName" id="firstName" InputLabelProps={{ shrink: true, }} onChange={this.onInputFieldChange} />
+                                    <label htmlFor="displayName">DisplayName:</label>
+                                    <TextField placeholder='first' margin="normal" fullWidth type="displayName" id="displayName" InputLabelProps={{ shrink: true, }} onChange={this.onInputFieldChange} />
                                 </Grid>
                                 <Grid item xs={6}>
-                                    <label htmlFor="lastName">Last Name:</label>
-                                    <TextField placeholder='last' margin="normal" fullWidth type="lastName" id="lastName" InputLabelProps={{ shrink: true, }} onChange={this.onInputFieldChange} />
                                 </Grid>
                             </Grid>
                             <label htmlFor="email">Email:</label>
