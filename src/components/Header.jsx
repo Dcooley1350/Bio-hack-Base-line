@@ -9,6 +9,7 @@ import IconButton from '@material-ui/core/IconButton'
 import BioHackLogo from './../img/BioHackBaseLineLogoWhite.png'
 import SignedInLinks from './SignedInLinks'
 import SignedOutLinks from './SignedOutLinks'
+import { connect } from 'react-redux';
 
 const headerStyles = makeStyles(theme => ({
     root: {
@@ -46,16 +47,15 @@ const headerStyles = makeStyles(theme => ({
 
 
 
-const Header = () => {
+const Header = (props) => {
     
     function AuthorizationLinksConditionRender() {
         //PLACE CONDITION SIGNEDINSIGNEDOUT HERE!!!!!
-        let condition = true;
-        if (condition === true) {
-            return (<div><SignedInLinks /><SignedOutLinks /></div>)
+        if (props.currentUser.email != null) {
+            return (<div><SignedInLinks /></div>);
         }
         else {
-            return <SignedOutLinks />
+            return (<div><SignedOutLinks /></div>);
         }
     };
 
@@ -75,5 +75,11 @@ const Header = () => {
         </div>
       );
 }
+
+const mapStateToProps = (state) => {
+    return { 
+        currentUser: state.currentUser
+    }
+}
  
-export default Header;
+export default connect(mapStateToProps)(Header);
