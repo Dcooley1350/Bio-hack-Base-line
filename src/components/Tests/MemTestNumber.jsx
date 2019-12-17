@@ -1,14 +1,28 @@
 import React from 'react';
 
-const MemTestNumber = (props) => {
-    const textAlignStyles = {
-        textAlign: 'center',
+class MemTestNumber extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+
+        };
     }
-    return (  
-        <div style={textAlignStyles}>
-            <h1>{props.id}</h1>
-        </div>
-    );
+
+    render() {
+    
+        const textAlignStyles = {
+            textAlign: 'center',
+        }
+        console.log(this.props);
+        return (
+            <div id="slideSource" style={textAlignStyles}>
+                <h1>{this.props.id}</h1>
+            </div>
+
+
+        );
+    };
+
 }
- 
+
 export default MemTestNumber;

@@ -60,7 +60,7 @@ const EndTestResults = (props) => {
             _memoryTest7,
             _memoryTest8
 
-        ))
+        ));
         props.dispatch(restartTestScript());
         props.dispatch(resetCurrentTest());
         console.log(props);

@@ -1,4 +1,5 @@
-import c from './../constants';
+import  Constants from './../constants';
+const { constants } = Constants;
 
 const initState =  {
     tests: [
@@ -9,9 +10,14 @@ const initState =  {
 }
 
 const testReducer = (state = initState, action) => {
+    let newState;
     switch(action.type){
-        case c.NEW_TEST :
+        case constants.NEW_TEST:
             return state
+        case constants.RECIEVE_TESTS_FROM_FIREBASE:
+            let allTests = action.Tests;
+            newState = Object.assign({}, state, allTests);
+            return newState;
             default:
             return state;
     }

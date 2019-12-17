@@ -6,9 +6,7 @@ const { constants } = Constants;
 const { firebaseConfig } = Constants;
 
 firebase.initializeApp(firebaseConfig);
-
-const users = firebase.database().ref('users');
-const tests = firebase.database().ref('tests');
+export var db = firebase.firestore();
 
 export function sendNewUserToFireBase(email, password) {
     console.log(email, password);
@@ -60,7 +58,7 @@ export function sendTestToFireBase(
     _memoryTest7,
     _memoryTest8
             ){
-    return () => tests.push({
+    return () => db.collection("tests").add({
         userId: _userId,
         date: _Date,
         time: _Time,
@@ -84,13 +82,13 @@ export function sendTestToFireBase(
     })
 }
 
-export function watchFirebaseTestsRef() {
-    return function(dispatch) {
-        tests.on('child_added', data => {
-            console.log(data.val());
-        })
-    }
-}
+// export function watchFirebaseTestsRef() {
+//     return function(dispatch) {
+//         tests.on('child_added', data => {
+//             console.log(data.val());
+//         })
+//     }
+// }
 
 export function watchAuthStateChanged() {
     return function(dispatch) {

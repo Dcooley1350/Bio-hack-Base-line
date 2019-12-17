@@ -67,7 +67,7 @@ class MemoryTest extends React.Component {
     
     startTestScript(event){
         event.preventDefault();   
-        this.testScriptTime = setInterval(this.advanceTestScript, 500);
+        this.testScriptTime = setInterval(this.advanceTestScript, 100);
     }
     
     stopTestScript(){
@@ -81,13 +81,13 @@ class MemoryTest extends React.Component {
                 case 0:
                     return(
                         <div>
-                            <p>You will be shown a series of numbers between 1-100.</p>
+                            <p>You will be shown a series of numbers between 1-10.</p>
                             <p>You will then be asked to recall those numbers.</p>
                             <Button style={buttonStyle} color='primary' id="start" variant='outlined' onClick={this.startTestScript}>Begin Test</Button>
                         </div>
                     );
                 case 1:
-                    return (<div></div>);
+                    return (<h1>Start</h1>);
                 case 2:
                     return(<MemTestNumber id={this.state.keyNumbers[0]}/>);
                 case 3:
