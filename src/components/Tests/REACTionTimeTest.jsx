@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { addReactionTimeResult } from '../../actions/currentTestActions';
 import ReactionTimeTestGrid from './ReactionTImeTestGrid.jsx';
 import ReactionTimePrompt from './ReactionTimePrompt';
+import ReactionTimeStopWatch from '.ReactionTimeStopWatch';
 
 
 class REACTionTimeTest extends React.Component {
@@ -125,6 +126,7 @@ class REACTionTimeTest extends React.Component {
                             <ReactionTimePrompt correctIcon={this.state.correctIcon}/>
                             <ReactionTimeTestGrid iconAssignment={this.state.iconPositions} handleCorrectIconClick={this.onAdvanceButtonClick} correctIcon={this.state.correctIcon}/>
                         </div>
+                        <ReactionTimeStopWatch reactionTime={this.state.reactionTimer}/>
                     );
             }
         }
