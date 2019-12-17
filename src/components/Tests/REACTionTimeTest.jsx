@@ -5,8 +5,6 @@ import { connect } from 'react-redux';
 import { addReactionTimeResult } from '../../actions/currentTestActions';
 import ReactionTimeTestGrid from './ReactionTImeTestGrid.jsx';
 import ReactionTimePrompt from './ReactionTimePrompt';
-import ReactionTimeStopWatch from './ReactionTimeStopWatch';
-
 
 class REACTionTimeTest extends React.Component {
     constructor(props) {
@@ -34,7 +32,6 @@ class REACTionTimeTest extends React.Component {
         this.stopReactionTimer=this.stopReactionTimer.bind(this);
     };
     componentWillUnmount(){
-        console.log('clearInterval');
         clearInterval(this.reactionTime);
     }
     componentDidUpdate(prevProps){
@@ -60,7 +57,8 @@ class REACTionTimeTest extends React.Component {
     }
     setCorrectIcon(){
         let correctIcon = Math.floor(Math.random() * 12);
-        this.state.correctIcon= correctIcon
+        console.log(correctIcon);
+        this.state.correctIcon= correctIcon;
     }
 
     setIconPositionsState(){

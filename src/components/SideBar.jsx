@@ -39,11 +39,11 @@ const SideNav = (props) => {
             </ul>
             <h5>Reaction Time Tests:</h5>
             <ul>
-              {props.currentTest.ReactionTimeTest1 ? (<li>Test 1: {props.currentTest.ReactionTimeTest1}</li>) : (<li>Test 1: Sucks</li>)}
-              {props.currentTest.ReactionTimeTest2 ? (<li>Test 2: {props.currentTest.ReactionTimeTest2}</li>) : (<li>Test 2: </li>)}
-              {props.currentTest.ReactionTimeTest3 ? (<li>Test 3: {props.currentTest.ReactionTimeTest3}</li>) : (<li>Test 3: </li>)}
-              {props.currentTest.ReactionTimeTest4 ? (<li>Test 4: {props.currentTest.ReactionTimeTest4}</li>) : (<li>Test 4: </li>)}
-              {props.currentTest.ReactionTimeTest5 ? (<li>Test 5: {props.currentTest.ReactionTimeTest5}</li>) : (<li>Test 5: </li>)}
+              {props.currentTest.ReactionTimeTest1 ? (<li>Test 1: {props.currentTest.ReactionTimeTest1}ms</li>) : (<li>Test 1: </li>)}
+              {props.currentTest.ReactionTimeTest2 ? (<li>Test 2: {props.currentTest.ReactionTimeTest2}ms</li>) : (<li>Test 2: </li>)}
+              {props.currentTest.ReactionTimeTest3 ? (<li>Test 3: {props.currentTest.ReactionTimeTest3}ms</li>) : (<li>Test 3: </li>)}
+              {props.currentTest.ReactionTimeTest4 ? (<li>Test 4: {props.currentTest.ReactionTimeTest4}ms</li>) : (<li>Test 4: </li>)}
+              {props.currentTest.ReactionTimeTest5 ? (<li>Test 5: {props.currentTest.ReactionTimeTest5}ms</li>) : (<li>Test 5: </li>)}
             </ul>
             <h5>Memory Tests:</h5>
             <ul>
