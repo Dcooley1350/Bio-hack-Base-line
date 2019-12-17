@@ -4,6 +4,7 @@ import TextField from '@material-ui/core/TextField';
 import Paper from '@material-ui/core/Paper'
 import Container from '@material-ui/core/Container';
 import { logInUser } from '../actions';
+import { connect } from 'react-redux'
 
 class SignIn extends React.Component {
   constructor(props) {
@@ -27,6 +28,31 @@ class SignIn extends React.Component {
     console.log(this.state);
   }
   render() {
+    const conditionalRender = (props) => {
+      if (this.props.currentUser.email == null){
+        return(
+          <form onSubmit={this.onSignIn}>
+            <h5>Sign In:</h5>
+            <div className="input-field">
+              <label htmlFor="email">Email:</label>
+              <TextField placeholder='name@email.com' margin="normal" fullWidth type="email" id="email" InputLabelProps={{ shrink: true, }} onChange={this.onInputFieldChange} />
+              <label htmlFor="password">Password:</label>
+              <TextField placeholder='*********' fullWidth type="password" id="password" InputLabelProps={{ shrink: true }} onChange={this.onInputFieldChange} />
+            </div>
+            <div className="input-field">
+              <br />
+              <Button style={buttonStyle} type='submit' color='primary' variant='outlined' className='btn btn-large'>Sign In</Button>
+              <br />
+            </div>
+          </form>
+        )
+      }
+          else{
+            return(
+              <h1>Successfully signed in as {this.props.currentUser.email}</h1>
+            )
+      }
+    }
     const buttonStyle={
       marginBottom: '10px'
   }
@@ -34,20 +60,7 @@ class SignIn extends React.Component {
       <Container maxWidth='md'>
         <Paper>
           <Container maxWidth='lg'>
-            <form onSubmit={this.onSignIn}>
-            <h5>Sign In:</h5>
-              <div className="input-field">
-                <label htmlFor="email">Email:</label>
-                <TextField placeholder='name@email.com' margin="normal" fullWidth type="email" id="email" InputLabelProps={{ shrink: true, }} onChange={this.onInputFieldChange} />
-                <label htmlFor="password">Password:</label>
-                <TextField placeholder='*********' fullWidth type="password" id="password" InputLabelProps={{ shrink: true }} onChange={this.onInputFieldChange} />
-              </div>
-              <div className="input-field">
-                <br/>
-                <Button style={buttonStyle} type='submit' color='primary' variant='outlined' className='btn btn-large'>Sign In</Button>
-                <br/>
-              </div>
-            </form>
+            {conditionalRender()}
           </Container>
         </Paper>
       </Container>
@@ -55,5 +68,11 @@ class SignIn extends React.Component {
   }
 }
 
+const mapStateToProps = (state) => {
+  return {
+    currentUser: state.currentUser
+  }
+}
 
-export default SignIn;
+
+export default connect(mapStateToProps)(SignIn);
