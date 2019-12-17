@@ -51,12 +51,12 @@ class REACTionTimeTest extends React.Component {
        this.setState({ scriptPosition: 0 });
     };
     setCorrectIconState(){
-        let correctIcon = Math.floor(Math.random() * 12);
+        let correctIcon = Math.floor(Math.random() * 12)+1;
         console.log("HERE IS THE CONSOLE LOG", correctIcon)
         this.setState({ correctIcon: correctIcon})
     }
     setCorrectIcon(){
-        let correctIcon = Math.floor(Math.random() * 12);
+        let correctIcon = Math.floor((Math.random()) * 12)+1;
         console.log(correctIcon);
         this.state.correctIcon= correctIcon;
     }
