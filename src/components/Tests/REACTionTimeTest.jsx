@@ -14,7 +14,9 @@ class REACTionTimeTest extends React.Component {
             scriptPosition: 0,
             iconPositions: [],
             correctIcon: null,
+            reactionTimer: 0
           };
+        this.reactionTime = '';
         this.testScriptTime= '';
         this.setIconPositions();
         this.setCorrectIcon();
@@ -26,6 +28,9 @@ class REACTionTimeTest extends React.Component {
         this.advanceTestScript=this.advanceTestScript.bind(this);
         this.setIconPositionsState=this.setIconPositions.bind(this);
         this.setCorrectIconState=this.setCorrectIconState.bind(this);
+        this.incremementReactionTimer=this.incremementReactionTimer.bind(this);
+        this.startReactionTimer=this.startReactionTimer.bind(this);
+        this.stopReactionTimer=this.stopReactionTimer.bind(this);
     };
 
     componentDidUpdate(prevProps){
@@ -36,9 +41,9 @@ class REACTionTimeTest extends React.Component {
     }
 
     onAdvanceButtonClick(){
-    
+       this.stopReactionTimer()
        this.props.dispatch(advanceTestScript());
-       this.props.dispatch(addReactionTimeResult("result",this.props.id))
+       this.props.dispatch(addReactionTimeResult(this.state.reactionTimer,this.props.id))
        this.setState({ scriptPosition: 0 });
     };
     setCorrectIconState(){
@@ -81,6 +86,20 @@ class REACTionTimeTest extends React.Component {
         clearInterval(this.testScriptTime);
     }
 
+    incremementReactionTimer(){
+        let newTime = this.state.reactionTimer;
+        newTime = newTime + 0.01;
+        this.setState({ reactionTime: newTime })
+    }
+
+    startReactionTimer(){
+        this.reactionTime = setInterval(this.incremementReactionTimer(),10);
+    }
+    
+    stopReactionTimer(){
+        clearInterval(this.reactionTime);
+    }
+
     render() {
         const reactionTimeTestScript = () => {
             switch(this.state.scriptPosition){
@@ -100,6 +119,7 @@ class REACTionTimeTest extends React.Component {
                     return (<h1>1</h1>);
                 case 4:
                     this.stopTestScript();
+                    this.startReactionTimer();
                     return(
                         <div>
                             <ReactionTimePrompt correctIcon={this.state.correctIcon}/>
