@@ -19,7 +19,6 @@ const ReactionTimeIcon = (props) => {
         width: 100
     }
     function conditionalIconAssignment(){
-        console.log(props);
         switch(props.iconAssignment){
             case 1:
                 return (<AirplaneIcon style={iconStyles}/>);
@@ -52,8 +51,6 @@ const ReactionTimeIcon = (props) => {
 
     function handleIconClick(event){
         event.preventDefault();
-        console.log(props);
-        console.log(props.IconAssignment, props.correctIcon)
         if(props.iconAssignment == props.correctIcon){
             console.log("CORRECTICON");
             props.handleCorrectIconClick();

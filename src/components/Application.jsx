@@ -19,7 +19,7 @@ class Application extends React.Component {
     }
     componentWillMount(){
         this.props.listenForUser();
-        this.props.listenForTests();
+        // this.props.listenForTests();
     }
     render(){
         return (

@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { addReactionTimeResult } from '../../actions/currentTestActions';
 import ReactionTimeTestGrid from './ReactionTImeTestGrid.jsx';
 import ReactionTimePrompt from './ReactionTimePrompt';
-import ReactionTimeStopWatch from '.ReactionTimeStopWatch';
+import ReactionTimeStopWatch from './ReactionTimeStopWatch';
 
 
 class REACTionTimeTest extends React.Component {
@@ -33,7 +33,10 @@ class REACTionTimeTest extends React.Component {
         this.startReactionTimer=this.startReactionTimer.bind(this);
         this.stopReactionTimer=this.stopReactionTimer.bind(this);
     };
-
+    componentWillUnmount(){
+        console.log('clearInterval');
+        clearInterval(this.reactionTime);
+    }
     componentDidUpdate(prevProps){
         if(prevProps.id !== this.props.id){
             this.setIconPositionsState();
@@ -43,6 +46,7 @@ class REACTionTimeTest extends React.Component {
 
     onAdvanceButtonClick(){
        this.stopReactionTimer()
+        this.setState({ reactionTime: 0 })
        this.props.dispatch(advanceTestScript());
        this.props.dispatch(addReactionTimeResult(this.state.reactionTimer,this.props.id))
        this.setState({ scriptPosition: 0 });
@@ -85,6 +89,7 @@ class REACTionTimeTest extends React.Component {
 
     stopTestScript(){
         clearInterval(this.testScriptTime);
+        // this.setState({reactionTime: 0})
     }
 
     incremementReactionTimer(){
@@ -94,7 +99,12 @@ class REACTionTimeTest extends React.Component {
     }
 
     startReactionTimer(){
-        this.reactionTime = setInterval(this.incremementReactionTimer(),10);
+        return this.setState(() => {
+            const startTime = Date.now()-this.state.reactionTimer;
+            this.reactionTime = setInterval(() => {console.log(setInterval);
+                this.setState({reactionTimer: Date.now() - startTime})
+            })
+        })
     }
     
     stopReactionTimer(){
@@ -125,8 +135,8 @@ class REACTionTimeTest extends React.Component {
                         <div>
                             <ReactionTimePrompt correctIcon={this.state.correctIcon}/>
                             <ReactionTimeTestGrid iconAssignment={this.state.iconPositions} handleCorrectIconClick={this.onAdvanceButtonClick} correctIcon={this.state.correctIcon}/>
+                            <h1>{this.state.reactionTimer}ms</h1>
                         </div>
-                        <ReactionTimeStopWatch reactionTime={this.state.reactionTimer}/>
                     );
             }
         }
