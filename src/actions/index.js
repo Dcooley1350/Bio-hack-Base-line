@@ -39,6 +39,7 @@ export function logOutUser() {
 }
 
 export function sendTestToFireBase(
+    _userId,
     _Date,
     _Time,
     _ctrlCondition,
@@ -60,6 +61,7 @@ export function sendTestToFireBase(
     _memoryTest8
             ){
     return () => tests.push({
+        userId: _userId,
         date: _Date,
         time: _Time,
         ctrlCondition: _ctrlCondition,

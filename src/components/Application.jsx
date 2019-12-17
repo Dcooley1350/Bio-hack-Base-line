@@ -18,7 +18,8 @@ class Application extends React.Component {
         super(props)
     }
     componentWillMount(){
-        this.props.listenForUser()
+        this.props.listenForUser();
+        this.props.listenForTests();
     }
     render(){
         return (
@@ -44,7 +45,10 @@ const mapDispatchToProps = dispatch => {
     return {
         listenForUser: () => {
             dispatch(watchAuthStateChanged())
-        }
+        },
+        // listenForTest: () => {
+        //     dispatch(watchTest)
+        // }
     }
 }
  

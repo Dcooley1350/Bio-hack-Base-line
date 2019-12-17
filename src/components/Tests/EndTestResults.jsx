@@ -18,6 +18,7 @@ const EndTestResults = (props) => {
 
     function onSaveButtonClick(event){
         event.preventDefault()
+        let _userId = props.currentUser.uid
         let _date = props.currentTest.date;
         let _time = props.currentTest.time;
         let _ctrlCondition = props.currentTest.ctrlCondition;
@@ -38,6 +39,7 @@ const EndTestResults = (props) => {
         let _memoryTest7 = props.currentTest.MemoryTest7;
         let _memoryTest8 = props.currentTest.MemoryTest8;
         props.dispatch(sendTestToFireBase(
+            _userId,
             _date,
             _time,
             _ctrlCondition,
@@ -129,6 +131,7 @@ const EndTestResults = (props) => {
 
 const mapStateToProps = (state) => ({
     currentTest: state.currentTest,
+    currentUser: state.currentUser,
 });
 
 export default connect(mapStateToProps)(EndTestResults);
