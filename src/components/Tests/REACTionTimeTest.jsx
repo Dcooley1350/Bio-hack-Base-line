@@ -45,8 +45,10 @@ class REACTionTimeTest extends React.Component {
     }
 
     onAdvanceButtonClick(){
+        console.log(this.state,this.props)
        this.stopReactionTimer()
-        this.setState({ reactionTime: 0 })
+       clearInterval(this.reactionTime)
+        this.setState({ reactionTimer: 0 })
        this.props.dispatch(advanceTestScript());
        this.props.dispatch(addReactionTimeResult(this.state.reactionTimer,this.props.id))
        this.setState({ scriptPosition: 0 });
@@ -79,11 +81,12 @@ class REACTionTimeTest extends React.Component {
     advanceTestScript() {
         let newScriptPosition = this.state.scriptPosition;
         newScriptPosition = newScriptPosition + 1;
-        this.setState({ scriptPosition: newScriptPosition })
+        this.setState({ scriptPosition: newScriptPosition });
     };
     
     handleBeginTest(event){
         this.advanceTestScript();
+        setTimeout(()=> this.startReactionTimer(),3000)
         this.testScriptTime = setInterval(this.advanceTestScript, 1000);
     }
 
@@ -130,7 +133,6 @@ class REACTionTimeTest extends React.Component {
                     return (<h1>1</h1>);
                 case 4:
                     this.stopTestScript();
-                    this.startReactionTimer();
                     return(
                         <div>
                             <ReactionTimePrompt correctIcon={this.state.correctIcon}/>
