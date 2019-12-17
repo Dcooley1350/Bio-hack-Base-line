@@ -46,9 +46,6 @@ const mapDispatchToProps = dispatch => {
         listenForUser: () => {
             dispatch(watchAuthStateChanged())
         },
-        // listenForTest: () => {
-        //     dispatch(watchTest)
-        // }
     }
 }
  

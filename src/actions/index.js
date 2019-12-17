@@ -82,18 +82,38 @@ export function sendTestToFireBase(
     })
 }
 
-// export function watchFirebaseTestsRef() {
-//     return function(dispatch) {
-//         tests.on('child_added', data => {
-//             console.log(data.val());
-//         })
-//     }
-// }
+
+export function getTestsFromFirebase(userId) {
+    return function(dispatch) {
+        console.log(userId);
+        db.collection("tests").where("userId", "==", userId)
+        .get()
+        .then(function(querySnapshot) {
+            let tests = [];
+            querySnapshot.forEach(function(doc) {
+                let testEntry = {
+                    [doc.id]: doc.data()
+                }
+                tests.push(testEntry);
+                console.log(tests);
+            });
+        })
+        .catch(function(error) {
+            console.log("Error getting documents: ", error);
+        });
+        // dispatch(sendTestsToRedux());
+
+    }
+};
+
+export const sendTestsToRedux = (tests) => ({
+    type: constants.SEND_TESTS_TO_REDUX,
+    tests
+})
 
 export function watchAuthStateChanged() {
     return function(dispatch) {
         firebase.auth().onAuthStateChanged(function (user) {
-        console.log("the user is",user);
         dispatch(sendUserToRedux(user));
         })}}
 

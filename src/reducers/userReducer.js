@@ -1,9 +1,10 @@
 import Constants from './../constants';
 const { constants } = Constants;
 let initState = {
-    userEmail: null,
+    email: null,
     uid: null
 }
+
 const userReducer = (state = initState, action) => {
     let newState;
     let userInfo;
