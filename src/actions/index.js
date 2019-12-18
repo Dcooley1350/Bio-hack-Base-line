@@ -85,23 +85,20 @@ export function sendTestToFireBase(
 
 export function getTestsFromFirebase(userId) {
     return function(dispatch) {
-        console.log(userId);
+        let tests = {};
         db.collection("tests").where("userId", "==", userId)
         .get()
         .then(function(querySnapshot) {
-            let tests = [];
+
             querySnapshot.forEach(function(doc) {
-                let testEntry = {
-                    [doc.id]: doc.data()
-                }
-                tests.push(testEntry);
-                console.log(tests);
+                tests[doc.id] = doc.data();
             });
         })
         .catch(function(error) {
             console.log("Error getting documents: ", error);
         });
-        // dispatch(sendTestsToRedux());
+        console.log(tests);
+        dispatch(sendTestsToRedux(tests));
 
     }
 };

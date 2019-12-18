@@ -16,7 +16,7 @@ class Archive extends React.Component{
         console.log(this.props);
         let userId = this.props.currentUser.uid;
         console.log(userId);
-        getTestsFromFirebase(userId)();
+        getTestsFromFirebase(userId)(this.props.dispatch);
     }
     
     render(){
