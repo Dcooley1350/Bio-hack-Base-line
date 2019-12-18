@@ -36,21 +36,21 @@ const Test = (props) => {
       case 6:
         return(<ReactionTimeTest id='5'/>);
       case 7:
-        return(<MemoryTest memoryItems='5' id='1'/>);
+        return(<MemoryTest memoryItems='4' id='1'/>);
       case 8:
-        return(<MemoryTest memoryItems='6' id='2'/>);
+        return(<MemoryTest memoryItems='5' id='2'/>);
       case 9:
-        return(<MemoryTest memoryItems='7' id='3'/>);
+        return(<MemoryTest memoryItems='6' id='3'/>);
       case 10:
-        return(<MemoryTest memoryItems='8' id='4'/>);
+        return(<MemoryTest memoryItems='7' id='4'/>);
       case 11:
-        return(<MemoryTest memoryItems='9' id='5'/>);
+        return(<MemoryTest memoryItems='8' id='5'/>);
       case 12:
-        return(<MemoryTest memoryItems='10' id='6'/>);
+        return(<MemoryTest memoryItems='9' id='6'/>);
       case 13:
-        return(<MemoryTest memoryItems='11' id='7'/>);
+        return(<MemoryTest memoryItems='10' id='7'/>);
       case 14:
-        return(<MemoryTest memoryItems='12' id='8'/>);
+        return(<MemoryTest memoryItems='11' id='8'/>);
         case 15:
         return(<EndTestResults/>);
       default:
