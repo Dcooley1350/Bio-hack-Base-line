@@ -16,19 +16,19 @@ const ArchiveFileController = (props) => {
     const classes = ArchiveFileControllerStyles();
     return (  
         <div className={classes.root}>
-            {props.tests && props.tests.map(test => {
+            {/* {props.tests && props.tests.map(test => {
                 return(<ArchiveFile
                 id={test.id}
                 testVar={test.testVar}
                 description={test.description} />
-            )})}
+            )})} */}
         </div>
     );
 }
 
 const mapStateToProps = (state) => {
  return{
-     tests: state.testsById.tests
+     tests: state.testsById
  }
 }
  
