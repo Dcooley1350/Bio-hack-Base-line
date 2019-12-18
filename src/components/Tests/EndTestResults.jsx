@@ -15,6 +15,12 @@ const EndTestResults = (props) => {
     const buttonStyle={
         marginBottom: '10px'
     }
+    const textRed= {
+        color: 'red'
+    }
+    const textGreen= {
+        color: 'green'
+    }
 
     function onSaveButtonClick(event){
         event.preventDefault()
