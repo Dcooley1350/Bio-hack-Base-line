@@ -34,7 +34,7 @@ class MemoryTest extends React.Component {
     setKeyNumbers(){
         let newKeyNums = [];
         for (var i = 0; i < this.props.memoryItems; ++i) {
-            let num = Math.floor(Math.random() * 11);
+            let num = Math.floor(Math.random() * 10);
             newKeyNums.push(num);
         }
         this.state.keyNumbers= newKeyNums;
@@ -66,8 +66,9 @@ class MemoryTest extends React.Component {
     };
     
     startTestScript(event){
-        event.preventDefault();   
-        this.testScriptTime = setInterval(this.advanceTestScript, 100);
+        event.preventDefault();
+        this.advanceTestScript();   
+        this.testScriptTime = setInterval(this.advanceTestScript, 1500);
     }
     
     stopTestScript(){
@@ -75,19 +76,22 @@ class MemoryTest extends React.Component {
     };
     
     render() {
+        const startStyle = {
+            fontSize: '300px'
+        }
         const memoryTestScript =() => {
 
             switch(this.state.scriptPosition){
                 case 0:
                     return(
                         <div>
-                            <p>You will be shown a series of numbers between 1-10.</p>
+                            <p>You will be shown a series of numbers between 0-9.</p>
                             <p>You will then be asked to recall those numbers.</p>
                             <Button style={buttonStyle} color='primary' id="start" variant='outlined' onClick={this.startTestScript}>Begin Test</Button>
                         </div>
                     );
                 case 1:
-                    return (<h1>Start</h1>);
+                    return (<h1 style={startStyle}>Start</h1>);
                 case 2:
                     return(<MemTestNumber id={this.state.keyNumbers[0]}/>);
                 case 3:

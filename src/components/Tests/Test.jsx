@@ -19,7 +19,6 @@ const testStyles = makeStyles(theme => ({
 
 const Test = (props) => {
   const classes = testStyles()
-
   const testScriptConditionalRender = () => {
     switch(props.testScriptPosition){
       case 0:

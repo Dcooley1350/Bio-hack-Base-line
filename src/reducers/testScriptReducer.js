@@ -1,7 +1,7 @@
 import  Constants from './../constants';
 const { constants } = Constants;
-
-export default (state = 0, action) => {
+//SET THIS BACK TO 0 WHEN TESTING IS OVER!
+export default (state = 7, action) => {
     let newState;
     switch (action.type) {
         case constants.ADVANCE_TEST_SCRIPT:
