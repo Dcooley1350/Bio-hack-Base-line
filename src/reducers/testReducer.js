@@ -9,16 +9,14 @@ const { constants } = Constants;
 //     ]
 // }
 
-const testReducer = (state = {}, action) => {
+const testReducer = (state = [], action) => {
     let newState;
     switch(action.type){
         case constants.NEW_TEST:
             return state
         case constants.SEND_TESTS_TO_REDUX:
+        console.log(typeof action.tests)
             let allTests = action.tests;
-            console.log(allTests);
-            newState = Object.assign({}, state,{...allTests});
-            console.log(newState);
             return allTests;
             default:
             return state;
