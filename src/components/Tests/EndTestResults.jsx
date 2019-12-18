@@ -106,16 +106,57 @@ const EndTestResults = (props) => {
                                 <li key='5'>Test 5: {props.currentTest.ReactionTimeTest5}</li>
                             </ul>
                             <h4>Memory Test:</h4>
-                            <ul>
-                                <li key='1'>Test 1: user input: {props.currentTest.MemoryTest1.userInputNumbersString}</li>
-                                <li key='2'>Test 2: user input: {props.currentTest.MemoryTest2.userInputNumbersString}</li>
-                                <li key='3'>Test 3: user input: {props.currentTest.MemoryTest3.userInputNumbersString}</li>
-                                <li key='4'>Test 4: user input: {props.currentTest.MemoryTest4.userInputNumbersString}</li>
-                                <li key='5'>Test 5: user input: {props.currentTest.MemoryTest5.userInputNumbersString}</li>
-                                <li key='6'>Test 6:  user input: {props.currentTest.MemoryTest6.userInputNumbersString}</li>
-                                <li key='7'>Test 7: user input: {props.currentTest.MemoryTest7.userInputNumbersString}</li>
-                                <li key='8'>Test 8: user input: {props.currentTest.MemoryTest8.userInputNumbersString}</li>
-                            </ul>
+                            <ol>
+                                <li key='1'>
+                                    <ul>
+                                        <li>User input: {props.currentTest.MemoryTest1.userInputNumbersString}</li>
+                                        <li>Actual nums: {props.currentTest.MemoryTest1.correctNumberString}</li>
+                                    </ul>
+                                </li>
+                                <li key='2'>
+                                    <ul>
+                                        <li>User input: {props.currentTest.MemoryTest2.userInputNumbersString}</li>
+                                        <li>Actual nums: {props.currentTest.MemoryTest2.correctNumberString}</li>
+                                    </ul>
+                                </li>
+                                <li key='3'>
+                                    <ul>
+                                        <li>User input: {props.currentTest.MemoryTest3.userInputNumbersString}</li>
+                                        <li>Actual nums: {props.currentTest.MemoryTest3.correctNumberString}</li>
+                                    </ul>
+                                </li>
+                                <li key='4'>
+                                    <ul>
+                                        <li>User input: {props.currentTest.MemoryTest4.userInputNumbersString}</li>
+                                        <li>Actual nums: {props.currentTest.MemoryTest4.correctNumberString}</li>
+                                    </ul>
+                                </li>
+                                <li key='5'>
+                                    <ul>
+                                        <li>User input: {props.currentTest.MemoryTest5.userInputNumbersString}</li>
+                                        <li>Actual nums: {props.currentTest.MemoryTest5.correctNumberString}</li>
+                                    </ul>
+                                </li>
+                                <li key='6'>
+                                    <ul>
+                                        <li>User input: {props.currentTest.MemoryTest6.userInputNumbersString}</li>
+                                        <li>Actual nums: {props.currentTest.MemoryTest6.correctNumberString}</li>
+                                    </ul>
+                                </li>
+                                <li key='7'>
+                                    <ul>
+                                        <li>User input: {props.currentTest.MemoryTest7.userInputNumbersString}</li>
+                                        <li>Actual nums: {props.currentTest.MemoryTest7.correctNumberString}</li>
+                                    </ul>
+                                </li>
+                                <li key='8'>
+                                    <ul>
+                                        <li>User input: {props.currentTest.MemoryTest8.userInputNumbersString}</li>
+                                        <li>Actual nums: {props.currentTest.MemoryTest8.correctNumberString}</li>
+                                    </ul>
+                                </li>
+
+                            </ol>
                         </Grid>
                         
                         <div>
