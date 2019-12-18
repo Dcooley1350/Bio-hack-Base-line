@@ -21,6 +21,14 @@ const EndTestResults = (props) => {
     const textGreen= {
         color: 'green'
     }
+    function memoryTestConditionalColor(actual,input){
+        if(JSON.stringify(actual) == JSON.stringify(input)){
+            return textGreen;
+        }
+        else {
+            return textRed
+        }
+    }
 
     function onSaveButtonClick(event){
         event.preventDefault()
@@ -113,49 +121,49 @@ const EndTestResults = (props) => {
                             </ul>
                             <h4>Memory Test:</h4>
                             <ol>
-                                <li key='1'>
+                                <li style={memoryTestConditionalColor(props.currentTest.MemoryTest1.correctNumbers,props.currentTest.MemoryTest1.userInputNumbers)} key='1'>
                                     <ul>
                                         <li>User input: {props.currentTest.MemoryTest1.userInputNumbersString}</li>
                                         <li>Actual nums: {props.currentTest.MemoryTest1.correctNumberString}</li>
                                     </ul>
                                 </li>
-                                <li key='2'>
+                                <li style={memoryTestConditionalColor(props.currentTest.MemoryTest2.correctNumbers,props.currentTest.MemoryTest2.userInputNumbers)} key='2'>
                                     <ul>
                                         <li>User input: {props.currentTest.MemoryTest2.userInputNumbersString}</li>
                                         <li>Actual nums: {props.currentTest.MemoryTest2.correctNumberString}</li>
                                     </ul>
                                 </li>
-                                <li key='3'>
+                                <li style={memoryTestConditionalColor(props.currentTest.MemoryTest3.correctNumbers,props.currentTest.MemoryTest3.userInputNumbers)} key='3'>
                                     <ul>
                                         <li>User input: {props.currentTest.MemoryTest3.userInputNumbersString}</li>
                                         <li>Actual nums: {props.currentTest.MemoryTest3.correctNumberString}</li>
                                     </ul>
                                 </li>
-                                <li key='4'>
+                                <li style={memoryTestConditionalColor(props.currentTest.MemoryTest4.correctNumbers,props.currentTest.MemoryTest4.userInputNumbers)} key='4'>
                                     <ul>
                                         <li>User input: {props.currentTest.MemoryTest4.userInputNumbersString}</li>
                                         <li>Actual nums: {props.currentTest.MemoryTest4.correctNumberString}</li>
                                     </ul>
                                 </li>
-                                <li key='5'>
+                                <li style={memoryTestConditionalColor(props.currentTest.MemoryTest5.correctNumbers,props.currentTest.MemoryTest5.userInputNumbers)} key='5'>
                                     <ul>
                                         <li>User input: {props.currentTest.MemoryTest5.userInputNumbersString}</li>
                                         <li>Actual nums: {props.currentTest.MemoryTest5.correctNumberString}</li>
                                     </ul>
                                 </li>
-                                <li key='6'>
+                                <li style={memoryTestConditionalColor(props.currentTest.MemoryTest6.correctNumbers,props.currentTest.MemoryTest6.userInputNumbers)} key='6'>
                                     <ul>
                                         <li>User input: {props.currentTest.MemoryTest6.userInputNumbersString}</li>
                                         <li>Actual nums: {props.currentTest.MemoryTest6.correctNumberString}</li>
                                     </ul>
                                 </li>
-                                <li key='7'>
+                                <li style={memoryTestConditionalColor(props.currentTest.MemoryTest7.correctNumbers,props.currentTest.MemoryTest7.userInputNumbers)} key='7'>
                                     <ul>
                                         <li>User input: {props.currentTest.MemoryTest7.userInputNumbersString}</li>
                                         <li>Actual nums: {props.currentTest.MemoryTest7.correctNumberString}</li>
                                     </ul>
                                 </li>
-                                <li key='8'>
+                                <li style={memoryTestConditionalColor(props.currentTest.MemoryTest8.correctNumbers,props.currentTest.MemoryTest8.userInputNumbers)} key='8'>
                                     <ul>
                                         <li>User input: {props.currentTest.MemoryTest8.userInputNumbersString}</li>
                                         <li>Actual nums: {props.currentTest.MemoryTest8.correctNumberString}</li>

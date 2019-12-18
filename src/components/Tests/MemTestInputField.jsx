@@ -26,10 +26,9 @@ class MemTestInputField extends React.Component {
 
     handleNumberInput(event) {
         event.preventDefault();
-        console.log(event.target.id)
-        console.log(event.target)
+        let num = parseInt(event.target.id);
         let newInputNums = this.state.inputNums;
-        newInputNums.push(event.target.id);
+        newInputNums.push(num);
         this.setState({ inputNums: newInputNums });
     };
 
