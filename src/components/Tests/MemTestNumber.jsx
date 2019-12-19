@@ -14,12 +14,12 @@ class MemTestNumber extends React.Component {
             textAlign: 'center',
         }
         const numberStyles= {
-            fontSize: '300px'
+            fontSize: '100px'
         }
         console.log(this.props);
         return (
             <div id="slideSource" style={textAlignStyles}>
-                <h1 style={numberStyles}>{this.props.id}</h1>
+                <h3 style={numberStyles}>{this.props.id}</h3>
             </div>
 
 

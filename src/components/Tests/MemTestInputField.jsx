@@ -48,18 +48,17 @@ class MemTestInputField extends React.Component {
             justifyContent: 'center'
         }
         const inputNumsStyle = {
-            height: '100px',
+            height: '80px',
             fontSize: '80px'
         }
 
         return (
             <div>
-                <h3>Input the numbers in order below.</h3>
-                <h3> Input a single number then click input number.</h3>
+                <h3>Click to input numbers in order below.</h3>
                 <h3> Submit test when you have added all numbers from memory.</h3>
-                <h5 style={inputNumsStyle}>
+                <p style={inputNumsStyle}>
                     {this.state.inputNums.map(function (num) { return (<em key={v4()}>{num}, </em>) })}
-                </h5>
+                </p>
                 <Grid container style={flexContainerStyle}>
                     <button id={1} onClick={this.handleNumberInput} style={numberButtonStyle}>1</button>
                     <button id={2} onClick={this.handleNumberInput} style={numberButtonStyle}>2</button>

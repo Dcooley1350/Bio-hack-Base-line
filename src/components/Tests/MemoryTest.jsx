@@ -85,7 +85,7 @@ class MemoryTest extends React.Component {
     
     render() {
         const startStyle = {
-            fontSize: '300px'
+            fontSize: '100px'
         }
         const memoryTestScript =() => {
 
