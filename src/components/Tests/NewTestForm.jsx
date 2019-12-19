@@ -57,6 +57,7 @@ class newTestForm extends React.Component {
         const labelStyles={
             marginTop: '20px'
         }
+        console.log(this.state);
         return (  
             <Container maxWidth='lg'>
                 <Paper>

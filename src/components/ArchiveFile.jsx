@@ -130,6 +130,8 @@ const ArchiveFile = (props) => {
                                 <li>Time: {props.reactionTimeTest4}ms</li>
                                 <li>Time: {props.reactionTimeTest5}ms</li>
                             </ol>
+                            <h2>Average Reaction Time: {props.avgReactionTime}ms</h2>
+                            <h2>Overall Memory Score: {props.memoryTestScore}/8</h2>
                         </Grid>
                     </Grid>
                     </div>

@@ -50,11 +50,19 @@ class MemoryTest extends React.Component {
     };
     
     memoryTestFinish(correctNumbers,inputNumbers){
+        let bool;
+        if(JSON.stringify(correctNumbers) == JSON.stringify(inputNumbers)){
+            bool = true;
+        }
+        else{
+            bool = false;
+        }
        this.setState({ scriptPosition: 0 });
        this.props.dispatch(advanceTestScript());
        let result = {
            correctNumbers,
-           inputNumbers
+           inputNumbers,
+           bool
        }
 
        this.props.dispatch(addMemoryTestResult(result,this.props.id));
@@ -99,10 +107,11 @@ class MemoryTest extends React.Component {
                 case 4:
                     return (<MemTestNumber id={this.state.keyNumbers[2]} />);
                 case 5:
-                    return (<MemTestNumber id={this.state.keyNumbers[3]} />);
+                    if(this.state.keyNumbers[3])
+                        return (<MemTestNumber id={this.state.keyNumbers[3]} />);
                 case 6:
-                if(this.state.keyNumbers[4]){
-                    return (<MemTestNumber id={this.state.keyNumbers[4]} />);
+                    if(this.state.keyNumbers[4]){
+                        return (<MemTestNumber id={this.state.keyNumbers[4]} />);
                 }
                 case 7:
                     if(this.state.keyNumbers[5]){

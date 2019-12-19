@@ -27,6 +27,7 @@ const currentTestReducer = (state = '', action) => {
                 userInputNumbers: action.inputNumbers,
                 correctNumberString: correctNumberString,
                 userInputNumbersString: userInputNumbersString,
+                bool: action.bool
                 }});
             console.log(newState);
             return newState;

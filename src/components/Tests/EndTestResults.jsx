@@ -29,9 +29,19 @@ const EndTestResults = (props) => {
             return textRed
         }
     }
+    let boolArray = [props.currentTest.MemoryTest1.bool, props.currentTest.MemoryTest2.bool, props.currentTest.MemoryTest3.bool, props.currentTest.MemoryTest4.bool, props.currentTest.MemoryTest5.bool, props.currentTest.MemoryTest6.bool, props.currentTest.MemoryTest7.bool, props.currentTest.MemoryTest8.bool];
+
+    function overAllMemoryScore(boolArray) {
+        let counter = 0;
+        boolArray.forEach(bool => {if(bool){++counter}});
+        return counter;
+    }
+
+    const memoryScore = overAllMemoryScore(boolArray);
+
     let arr = [props.currentTest.ReactionTimeTest1, props.currentTest.ReactionTimeTest2, props.currentTest.ReactionTimeTest3, props.currentTest.ReactionTimeTest4, props.currentTest.ReactionTimeTest5,]
 
-    const arrAvg = arr => arr.reduce((a,b) => a + b, 0)/arr.length
+    const arrAvg = arr => arr.reduce((a,b) => a + b, 0)/arr.length;
 
     const avReactionScore = arrAvg(arr);
 
@@ -77,8 +87,9 @@ const EndTestResults = (props) => {
             _memoryTest5,
             _memoryTest6,
             _memoryTest7,
-            _memoryTest8
-
+            _memoryTest8,
+            avReactionScore,
+            memoryScore
         ));
         props.dispatch(restartTestScript());
         props.dispatch(resetCurrentTest());
@@ -110,7 +121,7 @@ const EndTestResults = (props) => {
                                 <li>CTRL Cond. Notes:     {props.currentTest.ctrlConditionNotes}</li>
                             </ul>
                             <h3>Avg Reaction Time: {avReactionScore}ms</h3>
-                            <h3>Overall Memory Score: {overallMemoryScore}</h3>
+                            <h3>Overall Memory Score: {memoryScore}/8</h3>
                         </Grid>
                         <Grid item xs={6}>
                             <div style={alignCenterStyle}>

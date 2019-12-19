@@ -46,6 +46,8 @@ const ArchiveFileController = (props) => {
                         reactionTimeTest3={test.reactionTimeTest3}
                         reactionTimeTest4={test.reactionTimeTest4}
                         reactionTimeTest5={test.reactionTimeTest5}
+                        avgReactionTime={test.avReactionScore}
+                        memoryTestScore={test.memoryScore}
                         key={testKeys[0]}
                     />)
             })}

@@ -14,6 +14,7 @@ export const addMemoryTestResult = (result, id) => ({
     type: constants.ADD_MEMORY_TEST_RESULT,
     correctNumbers: result.correctNumbers,
     inputNumbers: result.inputNumbers,
+    bool: result.bool,
     id
 });
 

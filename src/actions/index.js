@@ -41,9 +41,9 @@ export function sendTestToFireBase(
     _Date,
     _Time,
     _ctrlCondition,
+    _ctrlConditionNotes,
     _expCondition,
     _expConditionNotes,
-    _ctrlConditionNotes,
     _reactionTimeTest1,
     _reactionTimeTest2,
     _reactionTimeTest3,
@@ -56,7 +56,9 @@ export function sendTestToFireBase(
     _memoryTest5,
     _memoryTest6,
     _memoryTest7,
-    _memoryTest8
+    _memoryTest8,
+    avReactionScore,
+    memoryScore
             ){
     return () => db.collection("tests").add({
         userId: _userId,
@@ -79,6 +81,8 @@ export function sendTestToFireBase(
         memoryTest6: _memoryTest6,
         memoryTest7: _memoryTest7,
         memoryTest8: _memoryTest8,
+        avReactionScore: avReactionScore,
+        memoryScore: memoryScore
     })
 }
 
