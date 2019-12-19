@@ -107,14 +107,23 @@ class MemoryTest extends React.Component {
                 case 4:
                     return (<MemTestNumber id={this.state.keyNumbers[2]} />);
                 case 5:
-                    if(this.state.keyNumbers[3])
-                        return (<MemTestNumber id={this.state.keyNumbers[3]} />);
+                    if(this.state.keyNumbers[3] || this.state.keyNumbers[3]==0){
+                        return (<MemTestNumber id={this.state.keyNumbers[3]} />)
+                    }
+                    else {
+                        this.stopTestScript();
+                        return (<MemTestInputField keyNumbers={this.state.keyNumbers} memoryTestFinish={this.memoryTestFinish} />)
+                    }
                 case 6:
-                    if(this.state.keyNumbers[4]){
-                        return (<MemTestNumber id={this.state.keyNumbers[4]} />);
-                }
+                    if (this.state.keyNumbers[4] || this.state.keyNumbers[4] == 0){
+                        return (<MemTestNumber id={this.state.keyNumbers[4]} />)
+                    }
+                    else {
+                        this.stopTestScript();
+                        return (<MemTestInputField keyNumbers={this.state.keyNumbers} memoryTestFinish={this.memoryTestFinish} />)
+                    }
                 case 7:
-                    if(this.state.keyNumbers[5]){
+                    if (this.state.keyNumbers[5] || this.state.keyNumbers[5] == 0){
                         return ( <MemTestNumber id={this.state.keyNumbers[5]} />);
                     }
                     else{
@@ -123,7 +132,7 @@ class MemoryTest extends React.Component {
 
                     }
                 case 8:
-                    if (this.state.keyNumbers[6]) {
+                    if (this.state.keyNumbers[6] || this.state.keyNumbers[6] == 0) {
                         return (<MemTestNumber id={this.state.keyNumbers[6]} />);
                     }
                     else {
@@ -132,7 +141,7 @@ class MemoryTest extends React.Component {
 
                     }
                 case 9:
-                    if (this.state.keyNumbers[7]) {
+                    if (this.state.keyNumbers[7] || this.state.keyNumbers[7] == 0) {
                         return (<MemTestNumber id={this.state.keyNumbers[7]} />);
                     }
                     else {
@@ -141,7 +150,7 @@ class MemoryTest extends React.Component {
 
                     }
                 case 10:
-                    if (this.state.keyNumbers[8]) {
+                    if (this.state.keyNumbers[8] || this.state.keyNumbers[8] == 0) {
                         return (<MemTestNumber id={this.state.keyNumbers[8]} />);
                     }
                     else {
@@ -150,7 +159,7 @@ class MemoryTest extends React.Component {
 
                     }
                 case 11:
-                    if (this.state.keyNumbers[9]) {
+                    if (this.state.keyNumbers[9] || this.state.keyNumbers[9] == 0) {
                         return (<MemTestNumber id={this.state.keyNumbers[9]} />);
                     }
                     else {
@@ -159,7 +168,7 @@ class MemoryTest extends React.Component {
 
                     }
                 case 12:
-                    if (this.state.keyNumbers[10]) {
+                    if (this.state.keyNumbers[10] || this.state.keyNumbers[10] == 0) {
                         return (<MemTestNumber id={this.state.keyNumbers[10]} />);
                     }
                     else {
@@ -168,7 +177,7 @@ class MemoryTest extends React.Component {
 
                     }
                 case 13:
-                    if (this.state.keyNumbers[11]) {
+                    if (this.state.keyNumbers[11] || this.state.keyNumbers[11] == 0) {
                         return (<MemTestNumber id={this.state.keyNumbers[11]} />);
                     }
                     else {
@@ -177,7 +186,7 @@ class MemoryTest extends React.Component {
 
                     }
                 case 14:
-                    if (this.state.keyNumbers[12]) {
+                    if (this.state.keyNumbers[12] || this.state.keynumbers[12]==0) {
                         return (<MemTestNumber id={this.state.keyNumbers[12]} />);
                     }
                     else {
