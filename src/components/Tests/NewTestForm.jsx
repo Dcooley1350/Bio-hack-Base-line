@@ -15,7 +15,7 @@ class newTestForm extends React.Component {
         super(props);
         let state = {
             date: '',
-            time: ' ',
+            time: '',
             expCondition: '',
             expConditionNotes: ' ',
             ctrlCondition: ' ',
@@ -67,24 +67,24 @@ class newTestForm extends React.Component {
                             <Grid container spacing={2}>
                                 <Grid item xs={6}>
                                     <label style={labelStyles} htmlFor='expCondition'>Name/ExperimentalCondition:</label>
-                                    <TextField type='text' id='expCondition' fullWidth InputLabelProps={{ shrink: true }} onChange={this.onInputFieldChange}/>
+                                    <TextField required type='text' id='expCondition' fullWidth InputLabelProps={{ shrink: true }} onChange={this.onInputFieldChange}/>
                                     <label style={labelStyles} htmlFor='expConditionNotes'>Experimental Condition Notes:</label>
-                                    <TextField type='text' id='expConditionNotes' fullWidth InputLabelProps={{ shrink: true }} onChange={this.onInputFieldChange}/>
+                                    <TextField required type='text' id='expConditionNotes' fullWidth InputLabelProps={{ shrink: true }} onChange={this.onInputFieldChange}/>
                                 </Grid>
                                 <Grid item xs={6}>
                                     <label style={labelStyles} htmlFor='time'>Time:</label>
-                                    <TextField type='time' id='time' fullWidth defaultValue='12:00' InputLabelProps={{ shrink: true }} onChange={this.onInputFieldChange}/>
+                                    <TextField required type='time' id='time' fullWidth defaultValue='12:00' InputLabelProps={{ shrink: true }} onChange={this.onInputFieldChange}/>
                                     <br/>
                                     <label style={labelStyles} htmlFor='date'>Date:</label>
-                                    <TextField type='date' id='date' fullWidth defaultValue='0000-00-00' InputLabelProps={{ shrink: true }} onChange={this.onInputFieldChange}/>
+                                    <TextField required type='date' id='date' fullWidth defaultValue='0000-00-00' InputLabelProps={{ shrink: true }} onChange={this.onInputFieldChange}/>
                                 </Grid>
                             </Grid>
                             <Grid container>
                                 <Grid item xs={6}>
                                     <label htmlFor='ctrlCondition'>ControlConditions:</label>
-                                    <TextField type='text' id='ctrlCondition' fullWidth InputLabelProps={{ shrink: true }} onChange={this.onInputFieldChange}/>
+                                    <TextField required type='text' id='ctrlCondition' fullWidth InputLabelProps={{ shrink: true }} onChange={this.onInputFieldChange}/>
                                     <label htmlFor='ctrlConditionNotes'>Control Conditions Notes:</label>
-                                    <TextField type='text' id='ctrlConditionNotes' fullWidth InputLabelProps={{ shrink: true }} onChange={this.onInputFieldChange}/>
+                                    <TextField required type='text' id='ctrlConditionNotes' fullWidth InputLabelProps={{ shrink: true }} onChange={this.onInputFieldChange}/>
                                 </Grid>
                                 <Grid item xs={6}>
 
