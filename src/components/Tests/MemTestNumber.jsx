@@ -1,4 +1,5 @@
 import React from 'react';
+import './MemTestNumber.css'
 
 class MemTestNumber extends React.Component {
     constructor(props) {
