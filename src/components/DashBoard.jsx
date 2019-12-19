@@ -6,7 +6,7 @@ import ArchiveFileController from './ArchiveFileController';
 
 const DashboardStyles = makeStyles(theme => ({
     root: {
-        height: '100vh',
+        height: '93vh',
         width: '100%'
     }
 }));

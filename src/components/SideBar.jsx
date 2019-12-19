@@ -6,7 +6,7 @@ const SideNav = (props) => {
   let content = null;
 
   const sideNavStyle = {
-    height: '100vh',
+    height: '93vh',
     backgroundColor: '#ececeb',
     width: '100%',
   };

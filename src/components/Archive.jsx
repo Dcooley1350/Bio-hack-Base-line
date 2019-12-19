@@ -21,7 +21,7 @@ class Archive extends React.Component{
     
     render(){
             const root = {
-                height: '100vh',
+                height: '93vh',
                 width: '100%'
             }
         return (

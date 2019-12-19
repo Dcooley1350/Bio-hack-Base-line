@@ -12,7 +12,7 @@ import EndTestResults from './EndTestResults';
 
 const testStyles = makeStyles(theme => ({
   root: {
-    height: '100vh',
+    height: '93vh',
     width: '100%'
   }
 }));
