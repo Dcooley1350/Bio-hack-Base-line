@@ -5,7 +5,7 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const AnalysisStyles = makeStyles(theme => ({
     root: {
-        height: '93vh',
+        height: '95vh',
         width: '100%'
     }
 }));

@@ -9,12 +9,17 @@ const StartTestInfo = (props) => {
     const buttonStyle={
         marginBottom: '10px'
     }
+    const textAllign = {
+        textAlign: 'center'
+    }
     
     return (
         <Container maxWidth='lg'>
             <Paper>
-                <Container maxWidth='lg'>
-                    <p>This is a boat load of info about your new test</p>
+                <Container style={textAllign} maxWidth='lg'>
+                    <h1 style={textAllign}>Define a New Test</h1>
+                    <h3>You will be asked to enter control and experimental conditions for your test.</h3>
+                    <h3>Reaction time and memory tests will follow.</h3>
                     <Button style={buttonStyle} color='primary' variant='outlined' onClick={props.advanceTestScript}>Next</Button>
                 </Container>
             </Paper>
