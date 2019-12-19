@@ -23,11 +23,29 @@ const archiveFileStyles = makeStyles(theme => ({
 }))
 
 const ArchiveFile = (props) => {
+
+    const textRed= {
+        color: 'red'
+    }
+    const textGreen= {
+        color: 'green'
+    }
+
     const [expanded, setExpanded] = React.useState(false);
 
     const handleChange = panel => (event, isExpanded) => {
         setExpanded(isExpanded ? panel : false);
     };
+
+    function memoryTestConditionalColor(actual,input){
+        if(JSON.stringify(actual) == JSON.stringify(input)){
+            return textGreen;
+        }
+        else {
+            return textRed
+        }
+    }
+
     const classes = archiveFileStyles();
     return (
         <div className={classes.root}>
@@ -54,49 +72,49 @@ const ArchiveFile = (props) => {
                         <h5>Memory Tests:</h5>
                         <ol>
                             <li>
-                                <ul>
+                                <ul style={memoryTestConditionalColor(props.memoryTest1.correctNumbers,props.memoryTest1.userInputNumbers)}>
                                     <li>Input: {props.memoryTest1.userInputNumbersString}</li>
                                     <li>Actual: {props.memoryTest1.correctNumberString}</li>
                                 </ul>
                             </li>
                             <li>
-                                <ul>
+                                <ul style={memoryTestConditionalColor(props.memoryTest2.correctNumbers,props.memoryTest2.userInputNumbers)}>
                                     <li>Input: {props.memoryTest2.userInputNumbersString}</li>
                                     <li>Actual: {props.memoryTest2.correctNumberString}</li>
                                 </ul>
                             </li>
                             <li>
-                                <ul>
+                                <ul style={memoryTestConditionalColor(props.memoryTest3.correctNumbers,props.memoryTest3.userInputNumbers)}>
                                     <li>Input: {props.memoryTest3.userInputNumbersString}</li>
                                     <li>Actual: {props.memoryTest3.correctNumberString}</li>
                                 </ul>
                             </li>
                             <li>
-                                <ul>
+                                <ul style={memoryTestConditionalColor(props.memoryTest4.correctNumbers,props.memoryTest4.userInputNumbers)}>
                                     <li>Input: {props.memoryTest4.userInputNumbersString}</li>
                                     <li>Actual: {props.memoryTest4.correctNumberString}</li>
                                 </ul>
                             </li>
                             <li>
-                                <ul>
+                                <ul style={memoryTestConditionalColor(props.memoryTest5.correctNumbers,props.memoryTest5.userInputNumbers)}>
                                     <li>Input: {props.memoryTest5.userInputNumbersString}</li>
                                     <li>Actual: {props.memoryTest5.correctNumberString}</li>
                                 </ul>
                             </li>
                             <li>
-                                <ul>
+                                <ul style={memoryTestConditionalColor(props.memoryTest6.correctNumbers,props.memoryTest6.userInputNumbers)}>
                                     <li>Input: {props.memoryTest6.userInputNumbersString}</li>
                                     <li>Actual: {props.memoryTest6.correctNumberString}</li>
                                 </ul>
                             </li>
                             <li>
-                                <ul>
+                                <ul style={memoryTestConditionalColor(props.memoryTest7.correctNumbers,props.memoryTest7.userInputNumbers)}>
                                     <li>Input: {props.memoryTest7.userInputNumbersString}</li>
                                     <li>Actual: {props.memoryTest7.correctNumberString}</li>
                                 </ul>
                             </li>
                             <li>
-                                <ul>
+                                <ul style={memoryTestConditionalColor(props.memoryTest8.correctNumbers,props.memoryTest8.userInputNumbers)}>
                                     <li>Input: {props.memoryTest8.userInputNumbersString}</li>
                                     <li>Actual: {props.memoryTest8.correctNumberString}</li>
                                 </ul>

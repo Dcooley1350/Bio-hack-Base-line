@@ -29,6 +29,11 @@ const EndTestResults = (props) => {
             return textRed
         }
     }
+    let arr = [props.currentTest.ReactionTimeTest1, props.currentTest.ReactionTimeTest2, props.currentTest.ReactionTimeTest3, props.currentTest.ReactionTimeTest4, props.currentTest.ReactionTimeTest5,]
+
+    const arrAvg = arr => arr.reduce((a,b) => a + b, 0)/arr.length
+
+    const avReactionScore = arrAvg(arr);
 
     function onSaveButtonClick(event){
         event.preventDefault()
@@ -77,16 +82,14 @@ const EndTestResults = (props) => {
         ));
         props.dispatch(restartTestScript());
         props.dispatch(resetCurrentTest());
-        console.log(props);
     }
 
     function onDiscardButtonClick(event){
         event.preventDefault()
         props.dispatch(restartTestScript());
         props.dispatch(resetCurrentTest());
-        console.log(props);
     }
-    console.log(props);
+
     return (
         <Container maxWidth='md'>
             <Paper>
@@ -106,6 +109,8 @@ const EndTestResults = (props) => {
                                 <li>Control Condition: {props.currentTest.ctrlCondition}</li>
                                 <li>CTRL Cond. Notes:     {props.currentTest.ctrlConditionNotes}</li>
                             </ul>
+                            <h3>Avg Reaction Time: {avReactionScore}ms</h3>
+                            <h3>Overall Memory Score: {overallMemoryScore}</h3>
                         </Grid>
                         <Grid item xs={6}>
                             <div style={alignCenterStyle}>
