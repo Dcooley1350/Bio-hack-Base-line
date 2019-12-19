@@ -101,9 +101,9 @@ class MemoryTest extends React.Component {
                 case 1:
                     return (<h1 style={startStyle}>Start</h1>);
                 case 2:
-                    return(<MemTestNumber id={this.state.keyNumbers[0]}/>);
+                    return <MemTestNumber id={this.state.keyNumbers[0]}/>;
                 case 3:
-                    return (<MemTestNumber id={this.state.keyNumbers[1]} />);
+                    return <MemTestNumber id={this.state.keyNumbers[1]} />;
                 case 4:
                     return (<MemTestNumber id={this.state.keyNumbers[2]} />);
                 case 5:
