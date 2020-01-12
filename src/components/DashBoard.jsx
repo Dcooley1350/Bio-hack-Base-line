@@ -2,7 +2,6 @@ import React from 'react';
 import SideBar from './SideBar';
 import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
-import ArchiveFileController from './ArchiveFileController';
 
 const DashboardStyles = makeStyles(theme => ({
     root: {

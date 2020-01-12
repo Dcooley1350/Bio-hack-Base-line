@@ -5,7 +5,7 @@ import SignIn from './SignIn';
 import SignOut from './SignOut';
 import Register from './Register';
 import DashBoard from './DashBoard';
-import Archive from './Archive';
+import Archive from './Archive/Archive';
 import Analysis from './Analysis';
 import Test from './Tests/Test';
 import Error404 from './Error404';

@@ -90,7 +90,6 @@ export function sendTestToFireBase(
 export function getTestsFromFirebase(userId) {
     return async function(dispatch) {
         var tests = [];
-        console.log(typeof tests);
         db.collection("tests").where("userId", "==", userId)
         .get()
         .then(function(querySnapshot) {

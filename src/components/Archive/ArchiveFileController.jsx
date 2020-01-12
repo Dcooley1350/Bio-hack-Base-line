@@ -11,15 +11,7 @@ const ArchiveFileControllerStyles = makeStyles(theme => ({
 }));
 
 const ArchiveFileController = (props) => {
-    let keys = {
-        1: "these",
-        2: "are",
-        3: "keys"
-    }
     const classes = ArchiveFileControllerStyles();
-    props.tests.map(testObject => {
-        
-    })
     return (  
         <div className={classes.root}>
             {(props.tests).map(testObject => {
